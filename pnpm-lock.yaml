@@ -126,6 +126,9 @@ importers:
       eslint-plugin-react:
         specifier: 7.28.0
         version: 7.28.0(eslint@7.32.0)
+      next:
+        specifier: ^13.4.1
+        version: 13.4.1(react-dom@18.2.0)(react@18.2.0)
 
   packages/tailwind-config:
     devDependencies:
@@ -614,6 +617,7 @@ packages:
   /autoprefixer@10.4.13(postcss@8.4.20):
     resolution: {integrity: sha512-49vKpMqcZYsJjwotvt4+h/BCjJVnhGwcLpDt5xkcaOG3eLrG/HUYLagrihYsQ+qrIBgIzX1Rw7a6L8I/ZA1Atg==}
     engines: {node: ^10 || ^12 || >=14}
+    hasBin: true
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
@@ -1199,6 +1203,7 @@ packages:
 
   /eslint-config-prettier@8.5.0(eslint@7.32.0):
     resolution: {integrity: sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==}
+    hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
@@ -2051,6 +2056,7 @@ packages:
   /next@13.4.1(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-JBw2kAIyhKDpjhEWvNVoFeIzNp9xNxg8wrthDOtMctfn3EpqGCmW0FSviNyGgOSOSn6zDaX48pmvbdf6X2W9xA==}
     engines: {node: '>=16.8.0'}
+    hasBin: true
     peerDependencies:
       '@opentelemetry/api': ^1.1.0
       fibers: '>= 3.1.0'
@@ -2670,6 +2676,7 @@ packages:
   /tailwindcss@3.2.4(postcss@8.4.20):
     resolution: {integrity: sha512-AhwtHCKMtR71JgeYDaswmZXhPcW9iuI9Sp2LvZPo9upDZ7231ZJ7eA9RaURbhpXGVlrjX4cFNlB4ieTetEb7hQ==}
     engines: {node: '>=12.13.0'}
+    hasBin: true
     peerDependencies:
       postcss: ^8.0.9
     dependencies:
@@ -2768,6 +2775,7 @@ packages:
   /tsup@6.5.0(postcss@8.4.20)(typescript@4.9.4):
     resolution: {integrity: sha512-36u82r7rYqRHFkD15R20Cd4ercPkbYmuvRkz3Q1LCm5BsiFNUgpo36zbjVhCOgvjyxNBWNKHsaD5Rl8SykfzNA==}
     engines: {node: '>=14'}
+    hasBin: true
     peerDependencies:
       '@swc/core': ^1
       postcss: ^8.4.12
@@ -2897,6 +2905,7 @@ packages:
 
   /update-browserslist-db@1.0.10(browserslist@4.21.4):
     resolution: {integrity: sha512-OztqDenkfFkbSG+tRxBeAnCVPckDBcvibKd35yDONx6OU8N7sqgwc7rCbkJ/WcYtVRZ4ba68d6byhC21GFh7sQ==}
+    hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
     dependencies:
