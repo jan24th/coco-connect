@@ -1,3 +1,5 @@
+[![Check](https://github.com/jan24th/coco-connect/actions/workflows/check.yml/badge.svg)](https://github.com/jan24th/coco-connect/actions/workflows/check.yml)
+
 # Turborepo Tailwind CSS starter
 
 This is an official starter Turborepo.
