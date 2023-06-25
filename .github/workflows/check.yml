@@ -52,6 +52,10 @@ jobs:
     
     - name: Run linter
       run: pnpm lint
+
+    - name: Build ui
+      run: pnpm build --filter=./packages/*
+
     - name: Run typecheck
       run: pnpm typecheck
     
