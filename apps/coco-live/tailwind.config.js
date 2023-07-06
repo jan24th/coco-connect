@@ -19,6 +19,9 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-roboto)"],
       },
+      height: {
+        15: "3.75rem",
+      },
     },
   },
 };
