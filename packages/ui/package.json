@@ -12,6 +12,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsup",
+    "build-storybook": "tsup",
     "dev": "tsup --watch",
     "typecheck": "tsc --noEmit",
     "test": "vitest --ui",
