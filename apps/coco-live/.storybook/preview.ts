@@ -1,7 +1,7 @@
 import type { Preview } from "@storybook/react";
 import "../src/tailwind-input/globals.css";
 import { withThemeByDataAttribute } from "@storybook/addon-styling";
-import "ui/styles.css";
+import "ui/src/styles.css";
 
 /* snipped for brevity */
 
