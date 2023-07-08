@@ -13,11 +13,13 @@ export interface ButtonProps {
   variant?: keyof typeof variantStyles;
 }
 
-export const Button = <T extends Element = HTMLButtonElement>({
+export const Button = ({
   variant = "primary",
   className,
   ...props
-}: PropsWithChildren<ButtonHTMLAttributes<T> & ButtonProps>) => {
+}: PropsWithChildren<
+  ButtonHTMLAttributes<HTMLButtonElement> & ButtonProps
+>) => {
   return (
     <button
       className={clsx(
