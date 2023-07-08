@@ -8,15 +8,21 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc -b",
-    "storybook": "pnpm tailwind:build & storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "tailwind:build": "npx tailwindcss -i ./src/tailwind-input/globals.css -o ./.storybook/tailwind-output.css"
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "pnpm tailwind:build &storybook build",
+    "tailwind:build": "npx tailwindcss -i ./src/tailwind-input/globals.css -o ./.storybook/tailwind-output.css",
+    "tailwind:dev": "npx tailwindcss -i ./src/tailwind-input/globals.css -o ./.storybook/tailwind-output.css -w"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.15",
     "clsx": "^1.2.1",
+    "framer-motion": "^10.12.18",
     "next": "^13.4.1",
+    "next-themes": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-feather": "^2.0.10",
+    "shared": "workspace:*",
     "ui": "workspace:*"
   },
   "devDependencies": {
