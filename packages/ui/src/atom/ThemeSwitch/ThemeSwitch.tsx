@@ -8,7 +8,7 @@ const active = { opacity: 1, y: 0 };
 const hideSun = { opacity: 0, y: -16 };
 const hideMoon = { opacity: 0, y: 16 };
 const transition = {
-  duration: 0.2,
+  duration: 0.5,
   type: "spring",
   damping: 10,
   stiffness: 100,
