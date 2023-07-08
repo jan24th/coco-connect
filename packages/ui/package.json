@@ -7,12 +7,12 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist",
-    "./styles.css": "./dist/index.css",
-    "./src/styles.css": "./src/styles.css"
+    "./styles.css": "./dist/index.css"
   },
   "license": "MIT",
   "scripts": {
     "build": "tsup",
+    "build-storybook": "tsup",
     "dev": "tsup --watch",
     "typecheck": "tsc --noEmit",
     "test": "vitest --ui",
