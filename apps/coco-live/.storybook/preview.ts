@@ -1,6 +1,20 @@
 import type { Preview } from "@storybook/react";
-import "./tailwind-output.css"; // replace with the name of your tailwind css fileName
+import "../src/tailwind-input/globals.css";
+import { withThemeByDataAttribute } from "@storybook/addon-styling";
+import "ui/styles.css";
 
+/* snipped for brevity */
+
+export const decorators = [
+  withThemeByDataAttribute({
+    themes: {
+      light: "light",
+      dark: "dark",
+    },
+    defaultTheme: "dark",
+    attributeName: "class",
+  }),
+];
 const preview: Preview = {
   parameters: {
     nextjs: {
