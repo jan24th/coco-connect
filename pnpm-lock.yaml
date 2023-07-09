@@ -37,12 +37,12 @@ importers:
       '@headlessui/react':
         specifier: ^1.7.15
         version: registry.npmmirror.com/@headlessui/react@1.7.15(react-dom@18.2.0)(react@18.2.0)
-      '@testing-library/jest-dom':
-        specifier: ^5.16.5
-        version: registry.npmmirror.com/@testing-library/jest-dom@5.16.5
       '@testing-library/react':
         specifier: ^14.0.0
         version: registry.npmmirror.com/@testing-library/react@14.0.0(react-dom@18.2.0)(react@18.2.0)
+      '@testing-library/user-event':
+        specifier: ^14.4.3
+        version: registry.npmmirror.com/@testing-library/user-event@14.4.3(@testing-library/dom@9.3.1)
       clsx:
         specifier: ^1.2.1
         version: 1.2.1
@@ -101,6 +101,9 @@ importers:
       '@storybook/testing-library':
         specifier: 0.0.14-next.2
         version: 0.0.14-next.2
+      '@testing-library/jest-dom':
+        specifier: ^5.16.5
+        version: registry.npmmirror.com/@testing-library/jest-dom@5.16.5
       '@types/jest':
         specifier: ^29.5.2
         version: registry.npmmirror.com/@types/jest@29.5.2
@@ -113,6 +116,9 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.4
         version: 18.2.4
+      '@types/testing-library__jest-dom':
+        specifier: ^5.14.7
+        version: registry.npmmirror.com/@types/testing-library__jest-dom@5.14.7
       autoprefixer:
         specifier: ^10.4.13
         version: 10.4.13(postcss@8.4.20)
@@ -7676,6 +7682,7 @@ packages:
     resolution: {integrity: sha512-E09FiIft46CmH5Qnjb0wsW54/YQd69LsxeKUOWawmws1XWvyFGURnAChH0mlr7YPFR1ofwvUQfcL0J3lMxXqPA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@adobe/css-tools/-/css-tools-4.2.0.tgz}
     name: '@adobe/css-tools'
     version: 4.2.0
+    dev: true
 
   registry.npmmirror.com/@ampproject/remapping@2.2.1:
     resolution: {integrity: sha512-lFMjJTrFL3j7L9yBxwYfCq2k6qqwHyzuUl/XBnif78PWTJYyL/dfowQHWE3sp6U6ZzqWiiIZnpTMO96zhkjwtg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@ampproject/remapping/-/remapping-2.2.1.tgz}
@@ -10841,7 +10848,7 @@ packages:
     dependencies:
       client-only: registry.npmmirror.com/client-only@0.0.1
       react: 18.2.0
-      react-dom: registry.npmmirror.com/react-dom@18.2.0(react@18.2.0)
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   registry.npmmirror.com/@humanwhocodes/config-array@0.5.0:
@@ -11400,6 +11407,7 @@ packages:
       dom-accessibility-api: registry.npmmirror.com/dom-accessibility-api@0.5.16
       lodash: registry.npmmirror.com/lodash@4.17.21
       redent: registry.npmmirror.com/redent@3.0.0
+    dev: true
 
   registry.npmmirror.com/@testing-library/react@14.0.0(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-S04gSNJbYE30TlIMLTzv6QCTzt9AqIF5y6s6SzVFILNcNvbV/jU96GeiTPillGQo+Ny64M/5PV7klNYYgv5Dfg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@testing-library/react/-/react-14.0.0.tgz}
@@ -11415,7 +11423,7 @@ packages:
       '@testing-library/dom': registry.npmmirror.com/@testing-library/dom@9.3.1
       '@types/react-dom': registry.npmmirror.com/@types/react-dom@18.2.4
       react: 18.2.0
-      react-dom: registry.npmmirror.com/react-dom@18.2.0(react@18.2.0)
+      react-dom: 18.2.0(react@18.2.0)
 
   registry.npmmirror.com/@testing-library/user-event@13.5.0(@testing-library/dom@8.20.1):
     resolution: {integrity: sha512-5Kwtbo3Y/NowpkbRuSepbyMFkZmHgD+vPzYB/RJ4oxt5Gj/avFFBYjhw27cqSVPVw/3a67NK1PbiIr9k4Gwmdg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@testing-library/user-event/-/user-event-13.5.0.tgz}
@@ -11440,7 +11448,6 @@ packages:
       '@testing-library/dom': '>=7.21.4'
     dependencies:
       '@testing-library/dom': registry.npmmirror.com/@testing-library/dom@9.3.1
-    dev: true
 
   registry.npmmirror.com/@tootallnate/once@2.0.0:
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tootallnate/once/-/once-2.0.0.tgz}
@@ -11555,6 +11562,7 @@ packages:
     dependencies:
       expect: registry.npmmirror.com/expect@29.6.1
       pretty-format: registry.npmmirror.com/pretty-format@29.6.1
+    dev: true
 
   registry.npmmirror.com/@types/jsdom@20.0.1:
     resolution: {integrity: sha512-d0r18sZPmMQr1eG35u12FZfhIXNrnsPU/g5wvRKCUf/tOGilKKwYMYGqh33BNR6ba+2gkHw1EUiHoN3mn7E5IQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/jsdom/-/jsdom-20.0.1.tgz}
@@ -11638,6 +11646,7 @@ packages:
     version: 5.14.7
     dependencies:
       '@types/jest': registry.npmmirror.com/@types/jest@29.5.2
+    dev: true
 
   registry.npmmirror.com/@types/tough-cookie@4.0.2:
     resolution: {integrity: sha512-Q5vtl1W5ue16D+nIaW8JWebSSraJVlK+EthKn7e7UcD4KWsaSJ8BqGPXNaPghgtcn/fhvrN17Tv8ksUsQpiplw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/tough-cookie/-/tough-cookie-4.0.2.tgz}
@@ -12569,6 +12578,7 @@ packages:
     dependencies:
       ansi-styles: registry.npmmirror.com/ansi-styles@4.3.0
       supports-color: registry.npmmirror.com/supports-color@7.2.0
+    dev: true
 
   registry.npmmirror.com/chalk@4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/chalk/-/chalk-4.1.2.tgz}
@@ -12797,6 +12807,7 @@ packages:
     resolution: {integrity: sha512-YUifsXXuknHlUsmlgyY0PKzgPOr7/FjCePfHNt0jxm83wHZi44VDMQ7/fGNkjY3/jV1MC+1CmZbaHzugyeRtpg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/css.escape/-/css.escape-1.5.1.tgz}
     name: css.escape
     version: 1.5.1
+    dev: true
 
   registry.npmmirror.com/cssesc@3.0.0:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/cssesc/-/cssesc-3.0.0.tgz}
@@ -13810,7 +13821,7 @@ packages:
         optional: true
     dependencies:
       react: 18.2.0
-      react-dom: registry.npmmirror.com/react-dom@18.2.0(react@18.2.0)
+      react-dom: 18.2.0(react@18.2.0)
       tslib: registry.npmmirror.com/tslib@2.4.1
     optionalDependencies:
       '@emotion/is-prop-valid': registry.npmmirror.com/@emotion/is-prop-valid@0.8.8
@@ -14219,6 +14230,7 @@ packages:
     name: indent-string
     version: 4.0.0
     engines: {node: '>=8'}
+    dev: true
 
   registry.npmmirror.com/inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/inflight/-/inflight-1.0.6.tgz}
@@ -15316,6 +15328,7 @@ packages:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lodash/-/lodash-4.17.21.tgz}
     name: lodash
     version: 4.17.21
+    dev: true
 
   registry.npmmirror.com/loose-envify@1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/loose-envify/-/loose-envify-1.4.0.tgz}
@@ -15448,6 +15461,7 @@ packages:
     name: min-indent
     version: 1.0.1
     engines: {node: '>=4'}
+    dev: true
 
   registry.npmmirror.com/minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/minimatch/-/minimatch-3.1.2.tgz}
@@ -16040,18 +16054,6 @@ packages:
       safe-buffer: registry.npmmirror.com/safe-buffer@5.2.1
     dev: true
 
-  registry.npmmirror.com/react-dom@18.2.0(react@18.2.0):
-    resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/react-dom/-/react-dom-18.2.0.tgz}
-    id: registry.npmmirror.com/react-dom/18.2.0
-    name: react-dom
-    version: 18.2.0
-    peerDependencies:
-      react: ^18.2.0
-    dependencies:
-      loose-envify: registry.npmmirror.com/loose-envify@1.4.0
-      react: 18.2.0
-      scheduler: registry.npmmirror.com/scheduler@0.23.0
-
   registry.npmmirror.com/react-feather@2.0.10(react@18.2.0):
     resolution: {integrity: sha512-BLhukwJ+Z92Nmdcs+EMw6dy1Z/VLiJTzEQACDUEnWMClhYnFykJCGWQx+NmwP/qQHGX/5CzQ+TGi8ofg2+HzVQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/react-feather/-/react-feather-2.0.10.tgz}
     id: registry.npmmirror.com/react-feather/2.0.10
@@ -16100,7 +16102,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: registry.npmmirror.com/loose-envify@1.4.0
-    dev: true
 
   registry.npmmirror.com/readable-stream@2.3.8:
     resolution: {integrity: sha512-8p0AUk4XODgIewSi0l8Epjs+EVnWiK7NoDIEGU0HhE7+ZyY8D1IMY7odu5lRrFXGg71L15KG8QrPmum45RTtdA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/readable-stream/-/readable-stream-2.3.8.tgz}
@@ -16144,6 +16145,7 @@ packages:
     dependencies:
       indent-string: registry.npmmirror.com/indent-string@4.0.0
       strip-indent: registry.npmmirror.com/strip-indent@3.0.0
+    dev: true
 
   registry.npmmirror.com/regenerate-unicode-properties@10.1.0:
     resolution: {integrity: sha512-d1VudCLoIGitcU/hEg2QqvyGZQmdC0Lf8BqdOMXGFSvJP4bNV1+XqbPQeHHLD51Jh4QJJ225dlIFvY4Ly6MXmQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/regenerate-unicode-properties/-/regenerate-unicode-properties-10.1.0.tgz}
@@ -16378,13 +16380,6 @@ packages:
     engines: {node: '>=v12.22.7'}
     dependencies:
       xmlchars: registry.npmmirror.com/xmlchars@2.2.0
-
-  registry.npmmirror.com/scheduler@0.23.0:
-    resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/scheduler/-/scheduler-0.23.0.tgz}
-    name: scheduler
-    version: 0.23.0
-    dependencies:
-      loose-envify: registry.npmmirror.com/loose-envify@1.4.0
 
   registry.npmmirror.com/schema-utils@3.3.0:
     resolution: {integrity: sha512-pN/yOAvcC+5rQ5nERGuwrjLlYvLTbCibnZ1I7B1LaiAz9BRBlE9GMgE/eqV30P7aJQUf7Ddimy/RsbYO/GrVGg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/schema-utils/-/schema-utils-3.3.0.tgz}
@@ -16728,6 +16723,7 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       min-indent: registry.npmmirror.com/min-indent@1.0.1
+    dev: true
 
   registry.npmmirror.com/strip-json-comments@3.1.1:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/strip-json-comments/-/strip-json-comments-3.1.1.tgz}
@@ -17282,7 +17278,7 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      react: 18.2.0
+      react: registry.npmmirror.com/react@18.2.0
     dev: false
 
   registry.npmmirror.com/util-deprecate@1.0.2:
@@ -17829,6 +17825,6 @@ packages:
       react:
         optional: true
     dependencies:
-      react: 18.2.0
+      react: registry.npmmirror.com/react@18.2.0
       use-sync-external-store: registry.npmmirror.com/use-sync-external-store@1.2.0(react@18.2.0)
     dev: false
