@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { CcTheme, CcThemeProviders } from './CcTheme'
+import { CcTheme, CcThemeProviders } from './CcTheme.client'
 
 const meta: Meta<typeof CcTheme> = {
   title: 'atom/CcTheme',

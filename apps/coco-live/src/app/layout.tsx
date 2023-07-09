@@ -3,7 +3,7 @@ import 'ui/styles.css'
 import { Roboto } from 'next/font/google'
 import clsx from 'clsx'
 import { CcHeader } from '../components/molecules/CcHeader'
-import { CcThemeProviders } from '../components/atom/CcTheme'
+import { CcThemeProviders } from '../components/atom/CcTheme.client'
 
 const robot = Roboto({
   weight: ['100', '300', '400', '500', '700', '900'],
@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       {/* todo:locale=>fonts chinese */}
       <body
-        className={clsx(`${robot.variable} font-sans`, 'min-h-screen text-zinc-800 dark:text-zinc-100')}
+        className={clsx(robot.variable, 'min-h-screen font-sans text-zinc-800  dark:text-zinc-100')}
       >
         <CcThemeProviders>
           <CcHeader />

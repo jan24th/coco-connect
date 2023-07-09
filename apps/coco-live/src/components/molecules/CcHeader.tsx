@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { CcCoconut } from '../icons/CcCoconut'
-import { CcTheme } from '../atom/CcTheme'
+import { CcTheme } from '../atom/CcTheme.client'
 
 export function CcHeader() {
   return (
