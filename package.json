@@ -24,5 +24,8 @@
     "lint-staged": "^13.2.2",
     "turbo": "latest"
   },
-  "packageManager": "pnpm@7.15.0"
+  "packageManager": "pnpm@7.15.0",
+  "dependencies": {
+    "typescript": "^4.9.4"
+  }
 }
