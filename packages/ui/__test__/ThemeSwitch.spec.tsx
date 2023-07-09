@@ -4,7 +4,7 @@ import { useState } from "react";
 import { expect } from "vitest";
 import { waitFor } from "@testing-library/dom";
 
-describe("CcTheme", () => {
+describe("ThemeSwitch", () => {
   it("can switch theme", () => {
     const Container = () => {
       const [theme, setTheme] = useState("dark");
