@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { Button } from "ui";
 import * as React from "react";
 
 const Card = ({
@@ -57,10 +56,6 @@ export default function Home() {
             Turborepo Example
           </span>
         </h1>
-        <div className="mx-auto mt-5 max-w-xl sm:flex sm:justify-center md:mt-8">
-          <Button />
-        </div>
-
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 place-content-evenly">
           {CARD_CONTENT.map((card) => (
             <Card key={card.title} {...card} />

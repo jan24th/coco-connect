@@ -1,5 +1,5 @@
-import { fireEvent, render, screen } from "../test/test-utils";
-import { ThemeSwitch } from "../src";
+import { fireEvent, render, screen } from "../../../test/test-utils";
+import { ThemeSwitch } from "./ThemeSwitch";
 import { useState } from "react";
 import { expect } from "vitest";
 import { waitFor } from "@testing-library/dom";

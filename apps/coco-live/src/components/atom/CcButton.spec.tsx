@@ -1,5 +1,5 @@
-import { render, screen } from "../test/test-utils";
-import { CcButton } from "../src/components/atom/CcButton";
+import { render, screen } from "../../../test/test-utils";
+import { CcButton } from "./CcButton";
 import React from "react";
 
 describe("example", () => {

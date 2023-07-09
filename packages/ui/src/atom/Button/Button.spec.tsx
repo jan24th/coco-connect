@@ -1,5 +1,5 @@
-import { Button } from "../src";
-import { render, screen } from "../test/test-utils";
+import { Button } from "./Button";
+import { render, screen } from "../../../test/test-utils";
 import { expect } from "vitest";
 
 describe("Button", () => {
