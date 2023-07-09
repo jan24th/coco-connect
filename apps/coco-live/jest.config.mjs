@@ -13,7 +13,7 @@ const config = {
 
     testEnvironment: 'jest-environment-jsdom',
     coverageProvider:"v8",
-    coverageReporters:["text", "lcov","json-summary"]
+    coverageReporters:["text", "lcov", "json-summary"]
 }
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
