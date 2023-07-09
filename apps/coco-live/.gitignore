@@ -8,7 +8,7 @@
 # testing
 /coverage
 
-# vue.js
+# next.js
 /.next/
 /out/
 
