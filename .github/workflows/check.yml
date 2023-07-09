@@ -45,11 +45,9 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-pnpm-store
 
-
-        
     - name: Install
       run: pnpm i
-    
+
     - name: Run linter
       run: pnpm lint
 
@@ -58,6 +56,26 @@ jobs:
 
     - name: Run typecheck
       run: pnpm typecheck
-    
-    
-    
+
+    - name: Run coverage
+      run: pnpm coverage
+
+    - name: Generate Code Coverage report for ui
+      id: code-coverage
+      uses: barecheck/code-coverage-action@v1
+      with:
+        barecheck-github-app-token: ${{ secrets.BARECHECK_GITHUB_APP_TOKEN }}
+        lcov-file: "./packages/ui/coverage/lcov.info"
+        send-summary-comment: true
+        show-annotations: "warning"
+        app-name: "ui"
+
+    - name: Generate Code Coverage report for coco-live
+      id: code-coverage
+      uses: barecheck/code-coverage-action@v1
+      with:
+        barecheck-github-app-token: ${{ secrets.BARECHECK_GITHUB_APP_TOKEN }}
+        lcov-file: "./apps/coco-live/coverage/lcov.info"
+        send-summary-comment: true
+        show-annotations: "warning"
+        app-name: "coco-live"
