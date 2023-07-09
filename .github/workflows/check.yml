@@ -61,22 +61,25 @@ jobs:
       run: pnpm coverage
 
     - name: 'Report UI Coverage'
-      uses: romeovs/lcov-reporter-action@v0.2.16
+      uses: romeovs/lcov-reporter-action@v2a28ec3e25fb7eae9cb537e9141603486f810d1a
       with:
         title: "packages/ui"
         lcov-file: ./packages/ui/coverage/lcov.info
         lcov-base: ./packages/ui
         github-token: ${{secrets.COVERAGE_TOKEN}}
         delete-old-comments: true
+        filter-changed-files: true
 
     - name: 'Report coco-live Coverage'
-      uses: romeovs/lcov-reporter-action@v0.2.16
+      uses: romeovs/lcov-reporter-action@v2a28ec3e25fb7eae9cb537e9141603486f810d1a
       with:
         title: "apps/coco-live"
         lcov-base: ./apps/coco-live
         lcov-file: ./apps/coco-live/coverage/lcov.info
         github-token: ${{secrets.COVERAGE_TOKEN}}
         delete-old-comments: true
+        filter-changed-files: true
+
 
 
 
