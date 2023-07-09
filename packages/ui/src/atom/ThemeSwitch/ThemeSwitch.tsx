@@ -1,38 +1,38 @@
-import { Switch } from "@headlessui/react";
-import { motion } from "framer-motion";
-import { Moon, Sun } from "react-feather";
+import { Switch } from '@headlessui/react'
+import { motion } from 'framer-motion'
+import { Moon, Sun } from 'react-feather'
 
-const positionClass = "absolute inset-0 flex justify-center items-center";
-const active = { opacity: 1, x: 0, y: 0, scale: 1 };
-const hideSun = { opacity: 0, x: 0, y: -16, scale: 1 };
-const hideMoon = { opacity: 0, x: 0, y: 16, scale: 1 };
-const unableSun = { scale: 0.5, opacity: 1, y: -4, x: 4 };
-const unableMoon = { scale: 0.5, opacity: 1, y: 4, x: -4 };
+const positionClass = 'absolute inset-0 flex justify-center items-center'
+const active = { opacity: 1, x: 0, y: 0, scale: 1 }
+const hideSun = { opacity: 0, x: 0, y: -16, scale: 1 }
+const hideMoon = { opacity: 0, x: 0, y: 16, scale: 1 }
+const unableSun = { scale: 0.5, opacity: 1, y: -4, x: 4 }
+const unableMoon = { scale: 0.5, opacity: 1, y: 4, x: -4 }
 const transition = {
   duration: 0.5,
-  type: "spring",
+  type: 'spring',
   damping: 10,
   stiffness: 100,
-};
+}
 
-export const ThemeSwitch = ({
+export function ThemeSwitch({
   theme,
   setTheme,
   enabled = true,
 }: {
-  theme: string;
-  setTheme: (v: string) => void;
-  enabled?: boolean;
-}) => {
-  const isLight = theme === "light";
+  theme: string
+  setTheme: (v: string) => void
+  enabled?: boolean
+}) {
+  const isLight = theme === 'light'
 
   return (
     <Switch
       checked={enabled ? isLight : false}
-      onChange={() => enabled && setTheme(isLight ? "dark" : "light")}
-      className="w-4 h-4 relative"
+      onChange={() => enabled && setTheme(isLight ? 'dark' : 'light')}
+      className="relative h-4 w-4"
     >
-      <motion.span animate={enabled ? theme : "unable"}>
+      <motion.span animate={enabled ? theme : 'unable'}>
         <motion.span
           className={positionClass}
           initial={unableSun}
@@ -61,9 +61,9 @@ export const ThemeSwitch = ({
 
       <span className="sr-only">
         {enabled
-          ? `toggle theme to ${isLight ? "dark" : "light"}`
-          : `toggle theme is not enabled`}
+          ? `toggle theme to ${isLight ? 'dark' : 'light'}`
+          : 'toggle theme is not enabled'}
       </span>
     </Switch>
-  );
-};
+  )
+}

@@ -1,23 +1,22 @@
-import { CcCoconut } from "../icons/CcCoconut";
-import Link from "next/link";
-import React from "react";
-import { CcTheme } from "../atom/CcTheme";
+import Link from 'next/link'
+import { CcCoconut } from '../icons/CcCoconut'
+import { CcTheme } from '../atom/CcTheme'
 
-export const CcHeader = () => {
+export function CcHeader() {
   return (
     <div className="border-b border-gray-400">
-      <div className="h-15 px-10 container flex justify-between items-center">
+      <div className="container flex h-15 items-center justify-between px-10">
         <div className="flex items-center space-x-2">
           <CcCoconut height={46} width={46} />
-          <span className="block bg-gradient-to-r from-brandred to-brandblue bg-clip-text text-transparent font-black text-2xl">
+          <span className="block bg-gradient-to-r from-brandred to-brandblue bg-clip-text text-2xl font-black text-transparent">
             COCO LIVE
           </span>
         </div>
-        <div className="flex space-x-2 items-center">
-          <Link className="font-semibold" href={"/"}>
+        <div className="flex items-center space-x-2">
+          <Link className="font-semibold" href={'/'}>
             Bolg
           </Link>
-          <Link className="font-semibold" href={"/"}>
+          <Link className="font-semibold" href={'/'}>
             Timeline
           </Link>
           <div className="!ml-10">translate</div>
@@ -25,5 +24,5 @@ export const CcHeader = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
