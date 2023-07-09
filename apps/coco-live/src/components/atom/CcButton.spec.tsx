@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { CcButton } from './CcButton'
 
-describe('example', () => {
+describe('CcButton', () => {
   it('has a button', () => {
     render(<CcButton label="button" />)
     expect(screen.getByRole('button').textContent).toBe('button')
