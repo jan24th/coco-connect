@@ -61,7 +61,6 @@ jobs:
       run: pnpm coverage
 
     - name: Generate Code Coverage report for ui
-      id: code-coverage
       uses: barecheck/code-coverage-action@v1
       with:
         barecheck-github-app-token: ${{ secrets.BARECHECK_GITHUB_APP_TOKEN }}
@@ -71,7 +70,6 @@ jobs:
         app-name: "ui"
 
     - name: Generate Code Coverage report for coco-live
-      id: code-coverage
       uses: barecheck/code-coverage-action@v1
       with:
         barecheck-github-app-token: ${{ secrets.BARECHECK_GITHUB_APP_TOKEN }}
