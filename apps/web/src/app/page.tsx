@@ -1,6 +1,29 @@
 import { Metadata } from "next";
-import { Button, Card } from "ui";
+import * as React from "react";
 
+const Card = ({
+  title,
+  cta,
+  href,
+}: {
+  title: string;
+  cta: string;
+  href: string;
+}) => {
+  return (
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      href={href}
+      className="group mt-4 rounded-lg border border-transparent overflow-hidden bg-origin-border bg-gradient-to-r from-brandred to-brandblue text-[#6b7280]"
+    >
+      <div className="p-4 bg-zinc-900 h-full">
+        <p className="inline-block text-xl text-white">{title}</p>
+        <div className="text-xs mt-4 group-hover:underline">{cta} →</div>
+      </div>
+    </a>
+  );
+};
 const CARD_CONTENT = [
   {
     title: "Caching Tasks",
@@ -33,10 +56,6 @@ export default function Home() {
             Turborepo Example
           </span>
         </h1>
-        <div className="mx-auto mt-5 max-w-xl sm:flex sm:justify-center md:mt-8">
-          <Button />
-        </div>
-
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 place-content-evenly">
           {CARD_CONTENT.map((card) => (
             <Card key={card.title} {...card} />

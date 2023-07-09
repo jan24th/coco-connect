@@ -1,12 +1,13 @@
 import { Switch } from "@headlessui/react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Moon, Sun } from "react-feather";
-import { useEffect, useState } from "react";
 
 const positionClass = "absolute inset-0 flex justify-center items-center";
-const active = { opacity: 1, y: 0 };
-const hideSun = { opacity: 0, y: -16 };
-const hideMoon = { opacity: 0, y: 16 };
+const active = { opacity: 1, x: 0, y: 0, scale: 1 };
+const hideSun = { opacity: 0, x: 0, y: -16, scale: 1 };
+const hideMoon = { opacity: 0, x: 0, y: 16, scale: 1 };
+const unableSun = { scale: 0.5, opacity: 1, y: -4, x: 4 };
+const unableMoon = { scale: 0.5, opacity: 1, y: 4, x: -4 };
 const transition = {
   duration: 0.5,
   type: "spring",
@@ -24,51 +25,19 @@ export const ThemeSwitch = ({
   enabled?: boolean;
 }) => {
   const isLight = theme === "light";
-  const [flag, setFlag] = useState(enabled);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setFlag(enabled);
-    }, transition.duration * 1000);
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [enabled]);
-  if (!flag)
-    return (
-      <AnimatePresence>
-        {!enabled && (
-          <motion.div
-            initial={{ opacity: 1 }}
-            exit={isLight ? hideMoon : hideSun}
-            transition={transition}
-            className="w-4 h-4 relative"
-          >
-            <Sun
-              className="stroke-current absolute right-0 top-0"
-              size={8}
-              strokeWidth="3"
-            />
-            <Moon
-              className="stroke-current absolute left-0 bottom-0"
-              size={8}
-              strokeWidth="3"
-            />
-            <span className="sr-only">toggle theme is not enabled</span>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    );
+
   return (
     <Switch
-      checked={isLight}
-      onChange={() => setTheme(isLight ? "dark" : "light")}
+      checked={enabled ? isLight : false}
+      onChange={() => enabled && setTheme(isLight ? "dark" : "light")}
       className="w-4 h-4 relative"
     >
-      <motion.span animate={theme}>
+      <motion.span animate={enabled ? theme : "unable"}>
         <motion.span
           className={positionClass}
-          initial={hideSun}
+          initial={unableSun}
           variants={{
+            unable: unableSun,
             dark: hideSun,
             light: active,
           }}
@@ -78,8 +47,9 @@ export const ThemeSwitch = ({
         </motion.span>
         <motion.span
           className={positionClass}
-          initial={hideMoon}
+          initial={unableMoon}
           variants={{
+            unable: unableMoon,
             dark: active,
             light: hideMoon,
           }}
@@ -90,7 +60,9 @@ export const ThemeSwitch = ({
       </motion.span>
 
       <span className="sr-only">
-        toggle theme to {isLight ? "dark" : "light"}
+        {enabled
+          ? `toggle theme to ${isLight ? "dark" : "light"}`
+          : `toggle theme is not enabled`}
       </span>
     </Switch>
   );

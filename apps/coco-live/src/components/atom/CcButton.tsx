@@ -1,19 +1,19 @@
-import React, { FC } from "react";
+import React, { PropsWithChildren } from "react";
 import { clsx } from "clsx";
 
-type CcButtonProps = {
+interface CcButtonProps {
   theme?: "primary" | "secondary";
   size?: "small" | "medium" | "large";
   label: string;
   onClick?: () => void;
-};
+}
 
-export const CcButton: FC<CcButtonProps> = ({
+export const CcButton = ({
   theme = "primary",
   size = "medium",
   label,
   ...props
-}) => {
+}: PropsWithChildren<CcButtonProps>) => {
   return (
     <button
       type="button"

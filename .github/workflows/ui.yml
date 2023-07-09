@@ -1,0 +1,88 @@
+name: packages/ui
+on:
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'packages/**'
+
+
+jobs:
+  prepare_dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: "lts/*"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 8.3.1
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store
+
+      - name: Install
+        run: pnpm i
+
+
+  validate:
+    runs-on: ubuntu-latest
+    needs: prepare_dependencies
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: "lts/*"
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 8.3.1
+          run_install: false
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store
+      - name: Install
+        run: pnpm i
+
+      - name: Run typecheck
+        run: pnpm typecheck --filter=./packages/ui
+
+      - name: Run coverage
+        run: pnpm coverage --filter=./packages/ui
+
+      - name: 'Report UI Coverage'
+        uses: romeovs/lcov-reporter-action@2a28ec3e25fb7eae9cb537e9141603486f810d1a
+        with:
+          title: "packages/ui"
+          lcov-file: ./packages/ui/coverage/lcov.info
+          lcov-base: ./packages/ui
+          github-token: ${{secrets.COVERAGE_TOKEN}}
+          delete-old-comments: true
+
+
+
