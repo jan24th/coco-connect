@@ -60,20 +60,23 @@ jobs:
     - name: Run coverage
       run: pnpm coverage
 
-    - name: Generate Code Coverage report for ui
-      uses: barecheck/code-coverage-action@v1
+    - name: 'Report UI Coverage'
+      if: always() # Also generate the report if tests are failing
+      uses:  davelosert/vitest-coverage-report-action@v2
       with:
-        barecheck-github-app-token: ${{ secrets.BARECHECK_GITHUB_APP_TOKEN }}
-        lcov-file: "./packages/ui/coverage/lcov.info"
-        send-summary-comment: true
-        show-annotations: "warning"
-        app-name: "ui"
+        name: 'ui'
+        json-summary-path: './packages/ui/coverage/coverage-summary.json'
+        json-final-path: './packages/ui/coverage/coverage-final.json'
+#        github-token: ${{secrets.COVERAGE_TOKEN}}
 
-    - name: Generate Code Coverage report for coco-live
-      uses: barecheck/code-coverage-action@v1
+    - name: 'Report coco-live Coverage'
+      if: always() # Also generate the report if tests are failing
+      uses:  davelosert/vitest-coverage-report-action@v2
       with:
-        barecheck-github-app-token: ${{ secrets.BARECHECK_GITHUB_APP_TOKEN }}
-        lcov-file: "./apps/coco-live/coverage/lcov.info"
-        send-summary-comment: true
-        show-annotations: "warning"
-        app-name: "coco-live"
+        name: 'coco-live'
+        json-summary-path: './apps/coco-live/coverage/coverage-summary.json'
+        json-final-path: './apps/coco-live/coverage/coverage-final.json'
+#        github-token: ${{secrets.COVERAGE_TOKEN}}
+
+
+
