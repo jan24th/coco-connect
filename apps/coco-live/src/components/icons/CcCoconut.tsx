@@ -1,6 +1,6 @@
-import { SVGProps } from "react";
+import type { SVGProps } from 'react'
 
-export const CcCoconut = ({ ...props }: SVGProps<SVGSVGElement>) => {
+export function CcCoconut({ ...props }: SVGProps<SVGSVGElement>) {
   return (
     <svg width="200px" height="200.00px" viewBox="0 0 1024 1024" {...props}>
       <path
@@ -88,5 +88,5 @@ export const CcCoconut = ({ ...props }: SVGProps<SVGSVGElement>) => {
         fill="#7A3608"
       />
     </svg>
-  );
-};
+  )
+}

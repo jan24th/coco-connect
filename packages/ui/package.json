@@ -11,6 +11,8 @@
   },
   "license": "MIT",
   "scripts": {
+    "lint": "eslint . --ext=js,ts,tsx,jsx",
+    "lint:fix": "eslint . --ext=js,ts,tsx,jsx --fix",
     "build": "tsup",
     "build-storybook": "tsup",
     "dev": "tsup --watch",
@@ -31,7 +33,6 @@
     "@vitejs/plugin-react": "^4.0.2",
     "@vitest/coverage-c8": "^0.33.0",
     "@vitest/ui": "^0.33.0",
-    "eslint": "^7.32.0",
     "eslint-config-custom": "workspace:*",
     "jsdom": "^22.1.0",
     "postcss": "^8.4.20",
