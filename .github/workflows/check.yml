@@ -63,14 +63,21 @@ jobs:
     - name: 'Report UI Coverage'
       uses: romeovs/lcov-reporter-action@v0.2.16
       with:
+        title: "packages/ui"
         lcov-file: ./packages/ui/coverage/lcov.info
+        lcov-base: ./packages/ui
         github-token: ${{secrets.COVERAGE_TOKEN}}
+        delete-old-comments: true
 
     - name: 'Report coco-live Coverage'
       uses: romeovs/lcov-reporter-action@v0.2.16
       with:
+        title: "apps/coco-live"
+        lcov-base: ./apps/coco-live
         lcov-file: ./apps/coco-live/coverage/lcov.info
         github-token: ${{secrets.COVERAGE_TOKEN}}
+        delete-old-comments: true
+
 
 
 
