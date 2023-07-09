@@ -61,7 +61,7 @@ jobs:
       run: pnpm coverage
 
     - name: 'Report UI Coverage'
-      uses: romeovs/lcov-reporter-action@v2a28ec3e25fb7eae9cb537e9141603486f810d1a
+      uses: romeovs/lcov-reporter-action@2a28ec3e25fb7eae9cb537e9141603486f810d1a
       with:
         title: "packages/ui"
         lcov-file: ./packages/ui/coverage/lcov.info
@@ -71,7 +71,7 @@ jobs:
         filter-changed-files: true
 
     - name: 'Report coco-live Coverage'
-      uses: romeovs/lcov-reporter-action@v2a28ec3e25fb7eae9cb537e9141603486f810d1a
+      uses: romeovs/lcov-reporter-action@2a28ec3e25fb7eae9cb537e9141603486f810d1a
       with:
         title: "apps/coco-live"
         lcov-base: ./apps/coco-live
