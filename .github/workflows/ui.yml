@@ -70,7 +70,7 @@ jobs:
         run: pnpm i
 
       - name: Run typecheck
-        run: pnpm typecheck
+        run: pnpm typecheck --filter=./packages/ui
 
       - name: Run coverage
         run: pnpm coverage --filter=./packages/ui
