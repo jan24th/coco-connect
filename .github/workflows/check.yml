@@ -65,15 +65,14 @@ jobs:
       uses: romeovs/lcov-reporter-action@v0.2.16
       with:
         lcov-file: ./packages/ui/coverage/lcov.info
-#        github-token: ${{secrets.COVERAGE_TOKEN}}
+        github-token: ${{secrets.COVERAGE_TOKEN}}
 
     - name: 'Report coco-live Coverage'
       if: always() # Also generate the report if tests are failing
       uses: romeovs/lcov-reporter-action@v0.2.16
       with:
         lcov-file: ./apps/coco-live/coverage/lcov.info
-
-#        github-token: ${{secrets.COVERAGE_TOKEN}}
+        github-token: ${{secrets.COVERAGE_TOKEN}}
 
 
 
