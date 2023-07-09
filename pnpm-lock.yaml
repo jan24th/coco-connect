@@ -45,7 +45,7 @@ importers:
         version: registry.npmmirror.com/framer-motion@10.12.18(react-dom@18.2.0)(react@18.2.0)
       jest:
         specifier: ^29.6.1
-        version: registry.npmmirror.com/jest@29.6.1(@types/node@18.11.17)(ts-node@10.9.1)
+        version: registry.npmmirror.com/jest@29.6.1(@types/node@18.11.17)
       jest-environment-jsdom:
         specifier: ^29.6.1
         version: registry.npmmirror.com/jest-environment-jsdom@29.6.1
@@ -61,9 +61,6 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
-      react-feather:
-        specifier: ^2.0.10
-        version: registry.npmmirror.com/react-feather@2.0.10(react@18.2.0)
       shared:
         specifier: workspace:*
         version: link:../../packages/shared
@@ -133,7 +130,7 @@ importers:
         version: link:../../packages/tailwind-config
       tailwindcss:
         specifier: ^3.2.4
-        version: 3.2.4(postcss@8.4.20)(ts-node@10.9.1)
+        version: 3.2.4(postcss@8.4.20)
       tsconfig:
         specifier: workspace:*
         version: link:../../packages/tsconfig
@@ -235,7 +232,7 @@ importers:
         version: link:../tsconfig
       tsup:
         specifier: ^6.1.3
-        version: registry.npmmirror.com/tsup@6.5.0(typescript@4.9.4)
+        version: registry.npmmirror.com/tsup@6.5.0(ts-node@10.9.1)(typescript@4.9.4)
       typescript:
         specifier: ^4.9.4
         version: registry.npmmirror.com/typescript@4.9.4
@@ -271,9 +268,6 @@ importers:
       globby:
         specifier: ^13.2.2
         version: registry.npmmirror.com/globby@13.2.2
-      react-feather:
-        specifier: ^2.0.10
-        version: registry.npmmirror.com/react-feather@2.0.10(react@18.2.0)
       zustand:
         specifier: ^4.3.9
         version: registry.npmmirror.com/zustand@4.3.9(react@18.2.0)
@@ -325,7 +319,7 @@ importers:
         version: link:../tsconfig
       tsup:
         specifier: ^6.1.3
-        version: 6.5.0(postcss@8.4.20)(ts-node@10.9.1)(typescript@4.9.4)
+        version: 6.5.0(postcss@8.4.20)(typescript@4.9.4)
       typescript:
         specifier: ^4.9.4
         version: 4.9.4
@@ -914,6 +908,7 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/trace-mapping': registry.npmmirror.com/@jridgewell/trace-mapping@0.3.9
+    dev: true
 
   /@discoveryjs/json-ext@0.5.7:
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
@@ -2150,15 +2145,19 @@ packages:
 
   /@tsconfig/node10@1.0.9:
     resolution: {integrity: sha512-jNsYVVxU8v5g43Erja32laIDHXeoNvFEpX33OK4d6hljo3jDhCBDhx5dhCCTMWUojscpAagGiRkBKxpdl9fxqA==}
+    dev: true
 
   /@tsconfig/node12@1.0.11:
     resolution: {integrity: sha512-cqefuRsh12pWyGsIoBKJA9luFu3mRxCA+ORZvA4ktLSzIuCUtWVxGIuXigEwO5/ywWFMZ2QEGKWvkZG1zDMTag==}
+    dev: true
 
   /@tsconfig/node14@1.0.3:
     resolution: {integrity: sha512-ysT8mhdixWK6Hw3i1V2AeRqZ5WfXg1G43mqoYlM2nc6388Fq5jcXyr5mRsqViLx/GJYdoL0bfXD8nmF+Zn/Iow==}
+    dev: true
 
   /@tsconfig/node16@1.0.4:
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
+    dev: true
 
   /@types/body-parser@1.19.2:
     resolution: {integrity: sha512-ALYone6pm6QmwZoAgeyNksccT9Q4AWZQ6PvfwR37GT6r6FWUPguq6sUmNGSMV2Wr761oQoBxwGGa6DR5o1DC9g==}
@@ -2597,6 +2596,7 @@ packages:
 
   /arg@4.1.3:
     resolution: {integrity: sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==}
+    dev: true
 
   /arg@5.0.2:
     resolution: {integrity: sha512-PYjyFOLKQ9y57JvQ6QLo8dAgNqswh8M1RMJYdQduT6xbWSgK36P/Z/v+p888pM69jMMfS8Xd8F6I1kQ/I9HUGg==}
@@ -3270,6 +3270,7 @@ packages:
 
   /create-require@1.1.1:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
+    dev: true
 
   /crypto-browserify@3.12.0:
     resolution: {integrity: sha512-fz4spIh+znjO2VjL+IdhEpRJ3YN6sMzITSBijk6FK2UvTqruSQW+/cCZTSNsMiZNvUeq0CqurF+dAbyiGOY6Wg==}
@@ -3454,6 +3455,7 @@ packages:
   /diff@4.0.2:
     resolution: {integrity: sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==}
     engines: {node: '>=0.3.1'}
+    dev: true
 
   /diffie-hellman@5.0.3:
     resolution: {integrity: sha512-kqag/Nl+f3GwyK25fhUMYj81BUOrZ9IuJsjIcDE5icNM9FJHAVm3VcUDxdLPoQtTuUylWm6ZIknYJwwaPxsUzg==}
@@ -4596,6 +4598,7 @@ packages:
 
   /make-error@1.3.6:
     resolution: {integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==}
+    dev: true
 
   /map-obj@1.0.1:
     resolution: {integrity: sha512-7N/q3lyZ+LVCp7PzuxrJr4KMbBE2hW7BT7YNia330OFxIf4d3r5zVpicP2650l7CPN6RM9zOJRl3NGpqSiw3Eg==}
@@ -5151,6 +5154,23 @@ packages:
     dependencies:
       camelcase-css: 2.0.1
       postcss: registry.npmmirror.com/postcss@8.4.24
+    dev: true
+
+  /postcss-load-config@3.1.4(postcss@8.4.20):
+    resolution: {integrity: sha512-6DiM4E7v4coTE4uzA8U//WhtPwyhiim3eyjEMFCnUpzbrkK9wJHgKDT2mR+HbtSrd/NubVaYTOpSpjUl8NQeRg==}
+    engines: {node: '>= 10'}
+    peerDependencies:
+      postcss: '>=8.0.9'
+      ts-node: '>=9.0.0'
+    peerDependenciesMeta:
+      postcss:
+        optional: true
+      ts-node:
+        optional: true
+    dependencies:
+      lilconfig: 2.0.6
+      postcss: 8.4.20
+      yaml: registry.npmmirror.com/yaml@1.10.2
     dev: true
 
   /postcss-load-config@3.1.4(postcss@8.4.20)(ts-node@10.9.1):
@@ -6020,6 +6040,40 @@ packages:
     resolution: {integrity: sha512-AsS729u2RHUfEra9xJrE39peJcc2stq2+poBXX8bcM08Y6g9j/i/PUzwNQqkaJde7Ntg1TO7bSREbR5sdosQ+g==}
     dev: true
 
+  /tailwindcss@3.2.4(postcss@8.4.20):
+    resolution: {integrity: sha512-AhwtHCKMtR71JgeYDaswmZXhPcW9iuI9Sp2LvZPo9upDZ7231ZJ7eA9RaURbhpXGVlrjX4cFNlB4ieTetEb7hQ==}
+    engines: {node: '>=12.13.0'}
+    hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
+    dependencies:
+      arg: 5.0.2
+      chokidar: 3.5.3
+      color-name: 1.1.4
+      detective: 5.2.1
+      didyoumean: 1.2.2
+      dlv: 1.1.3
+      fast-glob: 3.2.12
+      glob-parent: 6.0.2
+      is-glob: 4.0.3
+      lilconfig: 2.1.0
+      micromatch: 4.0.5
+      normalize-path: 3.0.0
+      object-hash: 3.0.0
+      picocolors: 1.0.0
+      postcss: 8.4.20
+      postcss-import: 14.1.0(postcss@8.4.20)
+      postcss-js: 4.0.0(postcss@8.4.20)
+      postcss-load-config: 3.1.4(postcss@8.4.20)
+      postcss-nested: 6.0.0(postcss@8.4.20)
+      postcss-selector-parser: 6.0.11
+      postcss-value-parser: 4.2.0
+      quick-lru: 5.1.1
+      resolve: 1.22.1
+    transitivePeerDependencies:
+      - ts-node
+    dev: true
+
   /tailwindcss@3.2.4(postcss@8.4.20)(ts-node@10.9.1):
     resolution: {integrity: sha512-AhwtHCKMtR71JgeYDaswmZXhPcW9iuI9Sp2LvZPo9upDZ7231ZJ7eA9RaURbhpXGVlrjX4cFNlB4ieTetEb7hQ==}
     engines: {node: '>=12.13.0'}
@@ -6262,6 +6316,7 @@ packages:
       typescript: registry.npmmirror.com/typescript@4.9.4
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
+    dev: true
 
   /ts-pnp@1.2.0(typescript@4.9.4):
     resolution: {integrity: sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==}
@@ -6292,7 +6347,7 @@ packages:
       strip-bom: registry.npmmirror.com/strip-bom@3.0.0
     dev: true
 
-  /tsup@6.5.0(postcss@8.4.20)(ts-node@10.9.1)(typescript@4.9.4):
+  /tsup@6.5.0(postcss@8.4.20)(typescript@4.9.4):
     resolution: {integrity: sha512-36u82r7rYqRHFkD15R20Cd4ercPkbYmuvRkz3Q1LCm5BsiFNUgpo36zbjVhCOgvjyxNBWNKHsaD5Rl8SykfzNA==}
     engines: {node: '>=14'}
     hasBin: true
@@ -6317,7 +6372,7 @@ packages:
       globby: registry.npmmirror.com/globby@11.1.0
       joycon: 3.1.1
       postcss: 8.4.20
-      postcss-load-config: 3.1.4(postcss@8.4.20)(ts-node@10.9.1)
+      postcss-load-config: 3.1.4(postcss@8.4.20)
       resolve-from: 5.0.0
       rollup: 3.4.0
       source-map: 0.8.0-beta.0
@@ -6354,7 +6409,6 @@ packages:
     resolution: {integrity: sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
-    dev: true
 
   /unfetch@4.2.0:
     resolution: {integrity: sha512-F9p7yYCn6cIW9El1zi0HI6vqpeIvBsr3dSuRO6Xuppb1u5rXpCPmMvLSyECLhybr9isec8Ohl0hPekMVrEinDA==}
@@ -6453,6 +6507,7 @@ packages:
 
   /v8-compile-cache-lib@3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
+    dev: true
 
   /vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
@@ -6604,6 +6659,7 @@ packages:
   /yn@3.1.1:
     resolution: {integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==}
     engines: {node: '>=6'}
+    dev: true
 
   /zod@3.21.4:
     resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
@@ -9984,9 +10040,8 @@ packages:
       slash: registry.npmmirror.com/slash@3.0.0
     dev: false
 
-  registry.npmmirror.com/@jest/core@29.6.1(ts-node@10.9.1):
+  registry.npmmirror.com/@jest/core@29.6.1:
     resolution: {integrity: sha512-CcowHypRSm5oYQ1obz1wfvkjZZ2qoQlrKKvlfPwh5jUXVU12TWr2qMeH8chLMuTFzHh5a1g2yaqlqDICbr+ukQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@jest/core/-/core-29.6.1.tgz}
-    id: registry.npmmirror.com/@jest/core/29.6.1
     name: '@jest/core'
     version: 29.6.1
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -10008,7 +10063,7 @@ packages:
       exit: registry.npmmirror.com/exit@0.1.2
       graceful-fs: registry.npmmirror.com/graceful-fs@4.2.10
       jest-changed-files: registry.npmmirror.com/jest-changed-files@29.5.0
-      jest-config: registry.npmmirror.com/jest-config@29.6.1(@types/node@18.11.17)(ts-node@10.9.1)
+      jest-config: registry.npmmirror.com/jest-config@29.6.1(@types/node@18.11.17)
       jest-haste-map: registry.npmmirror.com/jest-haste-map@29.6.1
       jest-message-util: registry.npmmirror.com/jest-message-util@29.6.1
       jest-regex-util: registry.npmmirror.com/jest-regex-util@29.4.3
@@ -10242,6 +10297,7 @@ packages:
     name: '@jridgewell/resolve-uri'
     version: 3.1.1
     engines: {node: '>=6.0.0'}
+    dev: true
 
   registry.npmmirror.com/@jridgewell/set-array@1.1.2:
     resolution: {integrity: sha512-xnkseuNADM0gt2bs+BvhO0p78Mk762YnZdsuzFV018NoG1Sj1SCQvpSqa7XUaTam5vAGasABV9qXASMKnFMwMw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@jridgewell/set-array/-/set-array-1.1.2.tgz}
@@ -10283,6 +10339,7 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': registry.npmmirror.com/@jridgewell/resolve-uri@3.1.1
       '@jridgewell/sourcemap-codec': registry.npmmirror.com/@jridgewell/sourcemap-codec@1.4.15
+    dev: true
 
   registry.npmmirror.com/@next/eslint-plugin-next@13.4.9:
     resolution: {integrity: sha512-nDtGpa992tNyAkT/KmSMy7QkHfNZmGCBYhHtafU97DubqxzNdvLsqRtliQ4FU04CysRCtvP2hg8rRC1sAKUTUA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@next/eslint-plugin-next/-/eslint-plugin-next-13.4.9.tgz}
@@ -10924,7 +10981,7 @@ packages:
       is-glob: registry.npmmirror.com/is-glob@4.0.3
       semver: registry.npmmirror.com/semver@7.5.4
       tsutils: registry.npmmirror.com/tsutils@3.21.0(typescript@4.9.4)
-      typescript: registry.npmmirror.com/typescript@4.9.4
+      typescript: 4.9.4
     transitivePeerDependencies:
       - supports-color
 
@@ -14743,7 +14800,7 @@ packages:
       - supports-color
     dev: false
 
-  registry.npmmirror.com/jest-cli@29.6.1(@types/node@18.11.17)(ts-node@10.9.1):
+  registry.npmmirror.com/jest-cli@29.6.1(@types/node@18.11.17):
     resolution: {integrity: sha512-607dSgTA4ODIN6go9w6xY3EYkyPFGicx51a69H7yfvt7lN53xNswEVLovq+E77VsTRi5fWprLH0yl4DJgE8Ing==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/jest-cli/-/jest-cli-29.6.1.tgz}
     id: registry.npmmirror.com/jest-cli/29.6.1
     name: jest-cli
@@ -14756,14 +14813,14 @@ packages:
       node-notifier:
         optional: true
     dependencies:
-      '@jest/core': registry.npmmirror.com/@jest/core@29.6.1(ts-node@10.9.1)
+      '@jest/core': registry.npmmirror.com/@jest/core@29.6.1
       '@jest/test-result': registry.npmmirror.com/@jest/test-result@29.6.1
       '@jest/types': registry.npmmirror.com/@jest/types@29.6.1
       chalk: registry.npmmirror.com/chalk@4.1.2
       exit: registry.npmmirror.com/exit@0.1.2
       graceful-fs: registry.npmmirror.com/graceful-fs@4.2.10
       import-local: registry.npmmirror.com/import-local@3.1.0
-      jest-config: registry.npmmirror.com/jest-config@29.6.1(@types/node@18.11.17)(ts-node@10.9.1)
+      jest-config: registry.npmmirror.com/jest-config@29.6.1(@types/node@18.11.17)
       jest-util: registry.npmmirror.com/jest-util@29.6.1
       jest-validate: registry.npmmirror.com/jest-validate@29.6.1
       prompts: registry.npmmirror.com/prompts@2.4.2
@@ -14774,7 +14831,7 @@ packages:
       - ts-node
     dev: false
 
-  registry.npmmirror.com/jest-config@29.6.1(@types/node@18.11.17)(ts-node@10.9.1):
+  registry.npmmirror.com/jest-config@29.6.1(@types/node@18.11.17):
     resolution: {integrity: sha512-XdjYV2fy2xYixUiV2Wc54t3Z4oxYPAELUzWnV6+mcbq0rh742X2p52pii5A3oeRzYjLnQxCsZmp0qpI6klE2cQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/jest-config/-/jest-config-29.6.1.tgz}
     id: registry.npmmirror.com/jest-config/29.6.1
     name: jest-config
@@ -14812,7 +14869,6 @@ packages:
       pretty-format: registry.npmmirror.com/pretty-format@29.6.1
       slash: registry.npmmirror.com/slash@3.0.0
       strip-json-comments: registry.npmmirror.com/strip-json-comments@3.1.1
-      ts-node: 10.9.1(@types/node@18.11.17)(typescript@4.9.4)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -15172,7 +15228,7 @@ packages:
       merge-stream: registry.npmmirror.com/merge-stream@2.0.0
       supports-color: registry.npmmirror.com/supports-color@8.1.1
 
-  registry.npmmirror.com/jest@29.6.1(@types/node@18.11.17)(ts-node@10.9.1):
+  registry.npmmirror.com/jest@29.6.1(@types/node@18.11.17):
     resolution: {integrity: sha512-Nirw5B4nn69rVUZtemCQhwxOBhm0nsp3hmtF4rzCeWD7BkjAXRIji7xWQfnTNbz9g0aVsBX6aZK3n+23LM6uDw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/jest/-/jest-29.6.1.tgz}
     id: registry.npmmirror.com/jest/29.6.1
     name: jest
@@ -15185,10 +15241,10 @@ packages:
       node-notifier:
         optional: true
     dependencies:
-      '@jest/core': registry.npmmirror.com/@jest/core@29.6.1(ts-node@10.9.1)
+      '@jest/core': registry.npmmirror.com/@jest/core@29.6.1
       '@jest/types': registry.npmmirror.com/@jest/types@29.6.1
       import-local: registry.npmmirror.com/import-local@3.1.0
-      jest-cli: registry.npmmirror.com/jest-cli@29.6.1(@types/node@18.11.17)(ts-node@10.9.1)
+      jest-cli: registry.npmmirror.com/jest-cli@29.6.1(@types/node@18.11.17)
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
@@ -16308,8 +16364,9 @@ packages:
       postcss: registry.npmmirror.com/postcss@8.4.24
     dev: true
 
-  registry.npmmirror.com/postcss-load-config@3.1.4:
+  registry.npmmirror.com/postcss-load-config@3.1.4(ts-node@10.9.1):
     resolution: {integrity: sha512-6DiM4E7v4coTE4uzA8U//WhtPwyhiim3eyjEMFCnUpzbrkK9wJHgKDT2mR+HbtSrd/NubVaYTOpSpjUl8NQeRg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/postcss-load-config/-/postcss-load-config-3.1.4.tgz}
+    id: registry.npmmirror.com/postcss-load-config/3.1.4
     name: postcss-load-config
     version: 3.1.4
     engines: {node: '>= 10'}
@@ -16323,6 +16380,7 @@ packages:
         optional: true
     dependencies:
       lilconfig: registry.npmmirror.com/lilconfig@2.1.0
+      ts-node: 10.9.1(@types/node@18.11.17)(typescript@4.9.4)
       yaml: registry.npmmirror.com/yaml@1.10.2
     dev: true
 
@@ -16491,18 +16549,6 @@ packages:
       safe-buffer: registry.npmmirror.com/safe-buffer@5.2.1
     dev: true
 
-  registry.npmmirror.com/react-feather@2.0.10(react@18.2.0):
-    resolution: {integrity: sha512-BLhukwJ+Z92Nmdcs+EMw6dy1Z/VLiJTzEQACDUEnWMClhYnFykJCGWQx+NmwP/qQHGX/5CzQ+TGi8ofg2+HzVQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/react-feather/-/react-feather-2.0.10.tgz}
-    id: registry.npmmirror.com/react-feather/2.0.10
-    name: react-feather
-    version: 2.0.10
-    peerDependencies:
-      react: '>=16.8.6'
-    dependencies:
-      prop-types: registry.npmmirror.com/prop-types@15.8.1
-      react: 18.2.0
-    dev: false
-
   registry.npmmirror.com/react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/react-is/-/react-is-16.13.1.tgz}
     name: react-is
@@ -16539,6 +16585,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: registry.npmmirror.com/loose-envify@1.4.0
+    dev: true
 
   registry.npmmirror.com/read-cache@1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/read-cache/-/read-cache-1.0.0.tgz}
@@ -17627,7 +17674,7 @@ packages:
     name: tslib
     version: 2.4.1
 
-  registry.npmmirror.com/tsup@6.5.0(typescript@4.9.4):
+  registry.npmmirror.com/tsup@6.5.0(ts-node@10.9.1)(typescript@4.9.4):
     resolution: {integrity: sha512-36u82r7rYqRHFkD15R20Cd4ercPkbYmuvRkz3Q1LCm5BsiFNUgpo36zbjVhCOgvjyxNBWNKHsaD5Rl8SykfzNA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/tsup/-/tsup-6.5.0.tgz}
     id: registry.npmmirror.com/tsup/6.5.0
     name: tsup
@@ -17654,7 +17701,7 @@ packages:
       execa: registry.npmmirror.com/execa@5.1.1
       globby: registry.npmmirror.com/globby@11.1.0
       joycon: registry.npmmirror.com/joycon@3.1.1
-      postcss-load-config: registry.npmmirror.com/postcss-load-config@3.1.4
+      postcss-load-config: registry.npmmirror.com/postcss-load-config@3.1.4(ts-node@10.9.1)
       resolve-from: registry.npmmirror.com/resolve-from@5.0.0
       rollup: registry.npmmirror.com/rollup@3.4.0
       source-map: registry.npmmirror.com/source-map@0.8.0-beta.0
@@ -17676,7 +17723,7 @@ packages:
       typescript: '>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta'
     dependencies:
       tslib: registry.npmmirror.com/tslib@1.14.1
-      typescript: registry.npmmirror.com/typescript@4.9.4
+      typescript: 4.9.4
 
   registry.npmmirror.com/turbo-darwin-64@1.10.7:
     resolution: {integrity: sha512-N2MNuhwrl6g7vGuz4y3fFG2aR1oCs0UZ5HKl8KSTn/VC2y2YIuLGedQ3OVbo0TfEvygAlF3QGAAKKtOCmGPNKA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/turbo-darwin-64/-/turbo-darwin-64-1.10.7.tgz}
@@ -17947,7 +17994,7 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      react: registry.npmmirror.com/react@18.2.0
+      react: 18.2.0
     dev: false
 
   registry.npmmirror.com/util-deprecate@1.0.2:
@@ -18528,6 +18575,6 @@ packages:
       react:
         optional: true
     dependencies:
-      react: registry.npmmirror.com/react@18.2.0
+      react: 18.2.0
       use-sync-external-store: registry.npmmirror.com/use-sync-external-store@1.2.0(react@18.2.0)
     dev: false
