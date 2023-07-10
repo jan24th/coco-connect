@@ -1,1 +1,2 @@
-export * from './hooks/useMounted'
+const obj = {}
+export default obj
