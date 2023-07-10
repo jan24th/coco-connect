@@ -1,8 +1,7 @@
 'use client'
 import { ThemeProvider, useTheme } from 'next-themes'
 import type { PropsWithChildren } from 'react'
-import { useMounted } from 'shared'
-import { ThemeSwitch } from 'ui'
+import { ThemeSwitch, useMounted } from 'ui'
 
 const DEFAULT_THEME = 'dark'
 export function CcThemeProviders({ children }: PropsWithChildren) {
