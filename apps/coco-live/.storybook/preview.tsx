@@ -22,7 +22,7 @@ export const decorators = [
     attributeName: "class",
   }),
   withThemeFromJSXProvider({
-    Provider:({children}:PropsWithChildren)=><div className={clsx(robot.variable,"font-sans")} id='parent'>{children}</div>
+    Provider:({children}:PropsWithChildren)=><div className={clsx(robot.variable,"font-sans")} >{children}</div>
   })
 ];
 const preview: Preview = {
