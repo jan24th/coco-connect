@@ -29,7 +29,8 @@
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
     "shared": "workspace:*",
-    "ui": "workspace:*"
+    "ui": "workspace:*",
+    "strapi": "workspace:*"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "7.0.25",

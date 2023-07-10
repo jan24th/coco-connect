@@ -1,10 +1,18 @@
 import { Metadata } from "next";
+import { api } from "strapi/src/client";
 
 export const metadata: Metadata = {
   title: "COCO LIVE",
 };
 
-export default function Home() {
+export default async function Home() {
+  const xxx = await api()
+    .getPosts()
+    .then((res) => {
+      return res;
+    });
+
+  console.log(xxx);
   return (
     <div className="flex flex-col items-center justify-center py-2">
       <main className="mx-auto w-auto px-4 pt-16 pb-8 sm:pt-24 lg:px-8">

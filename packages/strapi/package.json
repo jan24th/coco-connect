@@ -17,6 +17,7 @@
     "jiti": "^1.19.1"
   },
   "devDependencies": {
+    "@types/node": "^18.11.17",
     "@graphql-codegen/add": "^4.0.1",
     "@graphql-codegen/cli": "4.0.1",
     "@graphql-codegen/client-preset": "4.0.1",
