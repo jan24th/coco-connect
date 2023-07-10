@@ -1,0 +1,7 @@
+mutation updateHome{
+    updateHome(data:{seo:{keywords:"a"}}){
+        data {
+            id
+        }
+    }
+}

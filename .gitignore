@@ -38,3 +38,6 @@ dist/
 
 # ide
 .idea
+
+# graphql
+schema.graphql
