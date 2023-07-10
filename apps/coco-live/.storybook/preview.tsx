@@ -20,7 +20,6 @@ export const decorators = [
     },
     defaultTheme: "dark",
     attributeName: "class",
-
   }),
   withThemeFromJSXProvider({
     Provider:({children}:PropsWithChildren)=><div className={clsx(robot.variable,"font-sans")} id='parent'>{children}</div>
