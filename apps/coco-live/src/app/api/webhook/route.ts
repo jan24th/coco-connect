@@ -6,8 +6,9 @@ export function GET(request: Request) {
   })
 }
 
-export function POST(request: Request) {
-  return new NextResponse(`POST: ${request.url}`, {
+export async function POST(request: Request) {
+  const body = await request.json()
+  return new NextResponse(JSON.stringify({ body, url: request.url }), {
     status: 200,
   })
 }
