@@ -1,11 +1,10 @@
-import { Button } from "./Button";
-import { render, screen } from "../../../test/test-utils";
-import { expect } from "vitest";
+import { render, screen } from '@testing-library/react'
+import { Button } from './Button'
 
-describe("Button", () => {
-  it("can switch theme", () => {
-    render(<Button />);
-    const button = screen.getByRole("button");
-    expect(button).toBeInTheDocument();
-  });
-});
+describe('Button', () => {
+  it('can switch theme', () => {
+    render(<Button />)
+    const button = screen.getByRole('button')
+    expect(button).toBeInTheDocument()
+  })
+})

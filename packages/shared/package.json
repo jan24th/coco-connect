@@ -11,15 +11,17 @@
   "license": "MIT",
   "scripts": {
     "build": "tsup",
+    "build-storybook": "tsup",
     "dev": "tsup --watch",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext=js,ts,tsx,jsx",
+    "lint:fix": "eslint . --ext=js,ts,tsx,jsx --fix"
   },
   "peerDependencies": {
     "react": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.5",
-    "eslint": "^7.32.0",
     "eslint-config-custom": "workspace:*",
     "react": "^18.2.0",
     "tailwind-config": "workspace:*",

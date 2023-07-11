@@ -1,10 +1,9 @@
-import type { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { CcTheme, CcThemeProviders } from "./CcTheme";
+import { CcTheme, CcThemeProviders } from './CcTheme.client'
 
 const meta: Meta<typeof CcTheme> = {
-  title: "atom/CcTheme",
+  title: 'atom/CcTheme',
   component: () => (
     <CcThemeProviders>
       <CcTheme />
@@ -14,10 +13,10 @@ const meta: Meta<typeof CcTheme> = {
       </div>
     </CcThemeProviders>
   ),
-};
+}
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof CcTheme>;
+type Story = StoryObj<typeof CcTheme>
 
-export const Example: Story = {};
+export const Example: Story = {}

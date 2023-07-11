@@ -1,10 +1,10 @@
-const colors = require("tailwindcss/colors");
+const colors = require('tailwindcss/colors')
 
 module.exports = {
-  darkMode: "class",
+  darkMode: 'class',
   content: [
     // app content
-    `src/**/*.{js,ts,jsx,tsx}`,
+    'src/**/*.{js,ts,jsx,tsx}',
     // include packages if not transpiling
     // "../../packages/**/*.{js,ts,jsx,tsx}",
   ],
@@ -17,4 +17,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
+}
