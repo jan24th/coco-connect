@@ -1170,7 +1170,7 @@ export interface UpdateHomeMutation { __typename?: 'Mutation'; updateHome?: { __
 
 export type GetPostsQueryVariables = Exact<{ [key: string]: never }>
 
-export interface GetPostsQuery { __typename?: 'Query'; posts?: { __typename?: 'PostEntityResponseCollection'; data: Array<{ __typename?: 'PostEntity'; attributes?: { __typename?: 'Post'; sections?: Array<{ __typename?: 'ComponentSectionImages'; medias: { __typename?: 'UploadFileRelationResponseCollection'; data: Array<{ __typename?: 'UploadFileEntity'; attributes?: { __typename?: 'UploadFile'; url: string; formats?: any | null } | null }> } } | { __typename?: 'ComponentSectionRichtext' } | { __typename?: 'Error' } | null> | null } | null }> } | null }
+export interface GetPostsQuery { __typename?: 'Query'; posts?: { __typename?: 'PostEntityResponseCollection'; data: Array<{ __typename?: 'PostEntity'; id?: string | null; attributes?: { __typename?: 'Post'; title?: string | null } | null }> } | null }
 
 export const UpdateHomeDocument = gql`
     mutation updateHome {
@@ -1185,19 +1185,9 @@ export const GetPostsDocument = gql`
     query getPosts {
   posts {
     data {
+      id
       attributes {
-        sections {
-          ... on ComponentSectionImages {
-            medias {
-              data {
-                attributes {
-                  url
-                  formats
-                }
-              }
-            }
-          }
-        }
+        title
       }
     }
   }

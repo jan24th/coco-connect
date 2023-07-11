@@ -1,19 +1,9 @@
 query getPosts{
   posts {
     data {
+      id
       attributes{
-        sections {
-          ...on ComponentSectionImages {
-            medias {
-              data {
-                attributes{
-                  url
-                  formats
-                }
-              }
-            }
-          }
-        }
+        title
       }
     }
   }

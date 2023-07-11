@@ -23,6 +23,6 @@ export function api() {
   const client = createClientBase(env.END_POINT, requestHeaders)
   return {
     getPosts: () =>
-      client.getPosts().then(res => res.posts.data.at(0)?.attributes),
+      client.getPosts().then(res => res.posts.data),
   }
 }

@@ -6,11 +6,8 @@ export const metadata: Metadata = {
 }
 
 export default async function Home() {
-  const xxx = await api()
+  const posts = await api()
     .getPosts()
-    .then((res) => {
-      return res
-    })
 
   // console.log(xxx)
   return (
@@ -18,9 +15,14 @@ export default async function Home() {
       <main className="mx-auto w-auto px-4 pb-8 pt-16 sm:pt-24 lg:px-8">
         <h1 className="mx-auto text-center text-6xl font-extrabold tracking-tight sm:text-7xl lg:text-8xl xl:text-8xl">
           COCO LIVE
-          <span className="from-brandred to-brandblue block bg-gradient-to-r bg-clip-text px-2 text-transparent">
+          <span className="block bg-gradient-to-r from-brandred to-brandblue bg-clip-text px-2 text-transparent">
             work in progress
           </span>
+          {posts.length
+            ? <ul>
+              {posts.map(i => <li key={i.id}>{i.attributes.title}</li>)}
+            </ul>
+            : <div>Empty posts</div>}
         </h1>
       </main>
     </div>
