@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "build-storybook": "turbo build-storybook",
+    "strapi:gen": "turbo codegen",
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",

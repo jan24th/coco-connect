@@ -29,6 +29,7 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 .env
+apps/coco-live/.env
 
 # turbo
 .turbo
@@ -38,3 +39,6 @@ dist/
 
 # ide
 .idea
+
+# graphql
+schema.graphql

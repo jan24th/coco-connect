@@ -1,0 +1,20 @@
+query getPosts{
+  posts {
+    data {
+      attributes{
+        sections {
+          ...on ComponentSectionImages {
+            medias {
+              data {
+                attributes{
+                  url
+                  formats
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -21,6 +21,9 @@
     "clean": {
       "cache": false
     },
-    "coverage": {}
+    "coverage": {},
+    "codegen": {
+      "cache": false
+    }
   }
 }
