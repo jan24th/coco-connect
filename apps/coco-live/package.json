@@ -21,6 +21,7 @@
     "@testing-library/user-event": "^14.4.3",
     "clsx": "^1.2.1",
     "framer-motion": "^10.12.18",
+    "graphql": "^16.7.1",
     "jest": "^29.6.1",
     "jest-environment-jsdom": "^29.6.1",
     "next": "^13.4.1",
