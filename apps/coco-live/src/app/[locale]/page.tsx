@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { api } from 'strapi/src/client'
 import { getTranslator } from 'next-intl/server'
 
 export const metadata: Metadata = {
@@ -8,12 +7,6 @@ export const metadata: Metadata = {
 
 export default async function Index({ params: { locale } }) {
   const t = await getTranslator(locale)
-  const xxx = await api()
-    .getPosts()
-    .then((res) => {
-      return res
-    })
-
   // console.log(xxx)
   return (
     <div className="flex flex-col items-center justify-center py-2">

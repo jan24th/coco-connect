@@ -17066,7 +17066,7 @@ packages:
     dev: true
 
   registry.npmmirror.com/cssom@0.3.8:
-    resolution: {integrity: sha512-b0tGHbfegbhPJpxpiBPU2sCkigAqtM9O121le6bbOlgyV+NyGyCmVfJ6QW9eRjz8CpNfWEOYBIMIGRYkLwsIYg==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/cssom/-/cssom-0.3.8.tgz}
+    resolution: {integrity: sha512-b0tGHbfegbhPJpxpiBPU2sCkigAqtM9O121le6bBlogyV+NyGyCmVfJ6QW9eRjz8CpNfWEOYBIMIGRYkLwsIYg==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/cssom/-/cssom-0.3.8.tgz}
     name: cssom
     version: 0.3.8
     dev: false

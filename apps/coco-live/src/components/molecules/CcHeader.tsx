@@ -18,7 +18,7 @@ export async function CcHeader({ locale }: { locale: string }) {
         </div>
         <div className="flex items-center space-x-2">
           <Link className="font-semibold" href={'/'}>
-            { t('Bolg')}
+            { t('Blog')}
           </Link>
           <Link className="font-semibold" href={'/'}>
             {t('Timeline')}
@@ -27,8 +27,6 @@ export async function CcHeader({ locale }: { locale: string }) {
           <Suspense fallback={<>loading</>}>
             <CcTranslateClient locale={locale} messages={{ Chinese: t('Chinese'), English: t('English') }}/>
           </Suspense>
-
-          <div className="!ml-10">{t('translate')}</div>
           <CcTheme />
         </div>
       </div>
