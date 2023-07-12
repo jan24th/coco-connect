@@ -18,11 +18,12 @@ function requestHeaders(headers: Record<string, string> = {}) {
   Object.assign(headers, { Authorization: `Bearer ${env.GRAPHQL_TOKEN}` })
   return headers
 }
-
 export function api() {
   const client = createClientBase(env.END_POINT, requestHeaders)
   return {
     getPosts: () =>
-      client.getPosts().then(res => res.posts.data),
+      client.getPosts().then(res => res.content.data),
+    getPost: (id: string) =>
+      client.getPost({ id }).then(res => res.content.data),
   }
 }

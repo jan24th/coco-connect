@@ -1,10 +1,21 @@
 query getPosts{
-  posts {
-    data {
-      id
-      attributes{
-        title
-      }
+    content:posts {
+        data {
+            id
+            attributes{
+                title
+            }
+        }
+
     }
-  }
+}
+
+query getPost($id:ID){
+    content:post(id: $id){
+        data {
+            attributes {
+                title
+            }
+        }
+    }
 }

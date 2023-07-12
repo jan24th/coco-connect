@@ -16,8 +16,8 @@ export interface Scalars {
   Boolean: { input: boolean; output: boolean }
   Int: { input: number; output: number }
   Float: { input: number; output: number }
-  DateTime: { input: any; output: any }
-  I18NLocaleCode: { input: any; output: any }
+  DateTime: { input: string; output: string }
+  I18NLocaleCode: { input: string; output: string }
   JSON: { input: any; output: any }
   PostSectionsDynamicZoneInput: { input: any; output: any }
   Upload: { input: any; output: any }
@@ -1170,7 +1170,13 @@ export interface UpdateHomeMutation { __typename?: 'Mutation'; updateHome?: { __
 
 export type GetPostsQueryVariables = Exact<{ [key: string]: never }>
 
-export interface GetPostsQuery { __typename?: 'Query'; posts?: { __typename?: 'PostEntityResponseCollection'; data: Array<{ __typename?: 'PostEntity'; id?: string | null; attributes?: { __typename?: 'Post'; title?: string | null } | null }> } | null }
+export interface GetPostsQuery { __typename?: 'Query'; content?: { __typename?: 'PostEntityResponseCollection'; data: Array<{ __typename?: 'PostEntity'; id?: string | null; attributes?: { __typename?: 'Post'; title?: string | null } | null }> } | null }
+
+export type GetPostQueryVariables = Exact<{
+  id?: InputMaybe<Scalars['ID']['input']>
+}>
+
+export interface GetPostQuery { __typename?: 'Query'; content?: { __typename?: 'PostEntityResponse'; data?: { __typename?: 'PostEntity'; attributes?: { __typename?: 'Post'; title?: string | null } | null } | null } | null }
 
 export const UpdateHomeDocument = gql`
     mutation updateHome {
@@ -1183,9 +1189,20 @@ export const UpdateHomeDocument = gql`
     `
 export const GetPostsDocument = gql`
     query getPosts {
-  posts {
+  content: posts {
     data {
       id
+      attributes {
+        title
+      }
+    }
+  }
+}
+    `
+export const GetPostDocument = gql`
+    query getPost($id: ID) {
+  content: post(id: $id) {
+    data {
       attributes {
         title
       }
@@ -1205,6 +1222,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     getPosts(variables?: GetPostsQueryVariables, requestHeaders?: Dom.RequestInit['headers']): Promise<GetPostsQuery> {
       return withWrapper(wrappedRequestHeaders => client.request<GetPostsQuery>(GetPostsDocument, variables, { ...requestHeaders, ...wrappedRequestHeaders }), 'getPosts', 'query')
+    },
+    getPost(variables?: GetPostQueryVariables, requestHeaders?: Dom.RequestInit['headers']): Promise<GetPostQuery> {
+      return withWrapper(wrappedRequestHeaders => client.request<GetPostQuery>(GetPostDocument, variables, { ...requestHeaders, ...wrappedRequestHeaders }), 'getPost', 'query')
     },
   }
 }
