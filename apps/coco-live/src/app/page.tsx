@@ -1,15 +1,14 @@
 import type { Metadata } from 'next'
-import { api } from 'strapi/src/client'
+import React from 'react'
+import { preloadPosts } from '../utils/getPosts.server'
+import PostList from './PostList'
 
 export const metadata: Metadata = {
   title: 'COCO LIVE',
 }
-
+export const revalidate = 60
 export default async function Home() {
-  const posts = await api()
-    .getPosts()
-
-  // console.log(xxx)
+  preloadPosts()
   return (
     <div className="flex flex-col items-center justify-center py-2">
       <main className="mx-auto w-auto px-4 pb-8 pt-16 sm:pt-24 lg:px-8">
@@ -18,11 +17,7 @@ export default async function Home() {
           <span className="block bg-gradient-to-r from-brandred to-brandblue bg-clip-text px-2 text-transparent">
             work in progress
           </span>
-          {posts.length
-            ? <ul>
-              {posts.map(i => <li key={i.id}>{i.attributes.title}</li>)}
-            </ul>
-            : <div>Empty posts</div>}
+          <PostList />
         </h1>
       </main>
     </div>
