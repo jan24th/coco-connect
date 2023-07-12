@@ -3,6 +3,10 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  GRAPHQL_TOKEN: ${{ secrets.GRAPHQL_TOKEN }}
+  END_POINT: ${{ secrets.END_POINT }}
+
 jobs:
   prepare_dependencies:
     runs-on: ubuntu-latest
@@ -66,7 +70,7 @@ jobs:
       - name: Install
         run: pnpm i
 
-      - name: Build ui
+      - name: Build deps
         run: pnpm build --filter=./packages/*
 
       - name: Run typecheck
