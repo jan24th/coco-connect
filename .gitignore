@@ -42,3 +42,5 @@ dist/
 
 # graphql
 schema.graphql
+/apps/coco-live/tsconfig.tsbuildinfo
+/apps/web/tsconfig.tsbuildinfo
