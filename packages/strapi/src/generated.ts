@@ -1,3 +1,5 @@
+// noinspection ES6UnusedImports
+import type {} from 'graphql'
 import type { GraphQLClient } from 'graphql-request'
 import type * as Dom from 'graphql-request/dist/types.dom'
 import gql from 'graphql-tag'

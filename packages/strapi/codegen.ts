@@ -25,6 +25,16 @@ const config: CodegenConfig = {
   generates: {
     './src/generated.ts': {
       plugins: [
+        {
+          add: {
+            content: '// noinspection ES6UnusedImports',
+          },
+        },
+        {
+          add: {
+            content: 'import type {} from \'graphql\'',
+          },
+        },
         'typescript',
         'typescript-operations',
         'typescript-graphql-request',
@@ -37,9 +47,6 @@ const config: CodegenConfig = {
       plugins: [
         'schema-ast',
       ],
-      config: {
-        scalars,
-      },
     },
   },
 }
