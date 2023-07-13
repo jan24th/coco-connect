@@ -1,31 +1,11 @@
-import '../tailwind-input/globals.css'
-import 'ui/styles.css'
-import { Roboto } from 'next/font/google'
-import clsx from 'clsx'
-import { CcHeader } from '../components/molecules/CcHeader'
-import { CcThemeProviders } from '../components/atom/CcTheme.client'
+import type { ReactNode } from 'react'
 
-const robot = Roboto({
-  weight: ['100', '300', '400', '500', '700', '900'],
-  subsets: ['latin'],
-  variable: '--font-roboto',
-})
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      {/* todo:locale=>fonts chinese */}
-      <body
-        className={clsx(robot.variable, 'font-sans', 'min-h-screen text-zinc-800  dark:text-zinc-100')}
-      >
-        <CcThemeProviders>
-          <CcHeader />
-          <div className="container">{children}</div>
-        </CcThemeProviders>
-      </body>
-    </html>
-  )
+interface Props {
+  children: ReactNode
+}
+
+// Since we have a `not-found.tsx` page on the root, a layout file
+// is required, even if it's just passing children through.
+export default function RootLayout({ children }: Props) {
+  return children
 }
