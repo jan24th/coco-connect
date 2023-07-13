@@ -14,11 +14,11 @@ const robot = Roboto({
   subsets: ['latin'],
   variable: '--font-roboto',
 })
-export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'cn' }]
-}
+// export function generateStaticParams() {
+//   return [{ locale: 'en' }, { locale: 'cn' }]
+// }
 
-export default function LocaleLayout({ children, params: { locale } }: {
+export default async function LocaleLayout({ children, params: { locale } }: {
   children: React.ReactNode
   params: { locale: 'en' | 'cn' }
 }) {
@@ -26,12 +26,11 @@ export default function LocaleLayout({ children, params: { locale } }: {
   // // Show a 404 error if the user requests an unknown locale
   // if (locale !== _locale)
   //   notFound()
-
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={clsx(robot.variable, 'font-sans', 'min-h-screen text-zinc-800  dark:text-zinc-100')}>
         <CcThemeProviders>
-          <CcHeader locale={locale} />
+          <CcHeader locale={locale}/>
           <div className="container">{children}</div>
         </CcThemeProviders>
       </body>

@@ -1,11 +1,5 @@
-import type { ReactNode } from 'react'
+import type { PropsWithChildren } from 'react'
 
-interface Props {
-  children: ReactNode
-}
-
-// Since we have a `not-found.tsx` page on the root, a layout file
-// is required, even if it's just passing children through.
-export default function RootLayout({ children }: Props) {
+export default function RootLayout({ children }: PropsWithChildren) {
   return children
 }

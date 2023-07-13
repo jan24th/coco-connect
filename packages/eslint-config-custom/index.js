@@ -5,6 +5,7 @@ module.exports = {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
     'react/jsx-closing-bracket-location': [1, 'line-aligned'],
+    'no-console': 'off',
   },
   parserOptions: {
     ecmaVersion: 'latest',

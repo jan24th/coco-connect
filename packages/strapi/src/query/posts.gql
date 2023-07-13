@@ -1,20 +1,30 @@
-query getPosts{
-  posts {
-    data {
-      attributes{
-        sections {
-          ...on ComponentSectionImages {
-            medias {
-              data {
-                attributes{
-                  url
-                  formats
-                }
-              }
+query getPosts($locale: I18NLocaleCode) {
+    content: posts(locale: $locale) {
+        data {
+            id
+            attributes {
+                title
+                slug
             }
-          }
         }
-      }
     }
-  }
+}
+
+query getPost($slug: String, $locale: I18NLocaleCode) {
+    content: posts(locale: $locale, filters: { slug: { eq: $slug } },pagination: {limit: 1}) {
+        data {
+            id
+            attributes {
+                title
+                slug
+                localizations {
+                    data {
+                        attributes {
+                            slug
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

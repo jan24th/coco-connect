@@ -9,10 +9,10 @@ export async function CcHeader({ locale }: { locale: string }) {
   const t = await getTranslator(locale)
   return (
     <div className="border-b border-gray-400">
-      <div className="h-15 container flex items-center justify-between px-10">
+      <div className="container flex h-15 items-center justify-between px-10">
         <div className="flex items-center space-x-2">
           <CcCoconut height={46} width={46} />
-          <span className="from-brandred to-brandblue block bg-gradient-to-r bg-clip-text text-2xl font-black text-transparent">
+          <span className="block bg-gradient-to-r from-brandred to-brandblue bg-clip-text text-2xl font-black text-transparent">
             {t('COCO LIVE')}
           </span>
         </div>

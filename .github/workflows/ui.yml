@@ -5,6 +5,9 @@ on:
     paths:
       - 'packages/**'
 
+env:
+  GRAPHQL_TOKEN: ${{ secrets.GRAPHQL_TOKEN }}
+  END_POINT: ${{ secrets.END_POINT }}
 
 jobs:
   prepare_dependencies:
