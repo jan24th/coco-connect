@@ -1,9 +1,9 @@
 import { cache } from 'react'
 import 'server-only'
-import { api } from 'strapi'
+import { getStrapiPost } from 'strapi'
 
-export const getPost = cache((id: string) => api().getPost(id))
+export const getPost = cache((slug: string, locale: string) => getStrapiPost(slug, locale))
 
-export function prePost(id: string) {
-  void getPost(id)
+export function preloadPost(slug: string, locale: string) {
+  void getPost(slug, locale)
 }

@@ -1,6 +1,8 @@
 {
   "extends": "tsconfig/nextjs.json",
   "compilerOptions": {
+    "preserveSymlinks": false,
+    "esModuleInterop": true,
     "plugins": [{ "name": "next" }],
     "types": ["node", "jest", "@testing-library/jest-dom"]
   },

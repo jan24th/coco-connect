@@ -1,20 +1,29 @@
-query getPosts{
-    content:posts {
+query getPosts($locale: I18NLocaleCode) {
+    content: posts(locale: $locale) {
         data {
             id
-            attributes{
+            attributes {
                 title
+                slug
             }
         }
-
     }
 }
 
-query getPost($id:ID){
-    content:post(id: $id){
+query getPost($slug: String, $locale: I18NLocaleCode) {
+    content: posts(locale: $locale, filters: { slug: { eq: $slug } },pagination: {limit: 1}) {
         data {
+            id
             attributes {
                 title
+                slug
+                localizations {
+                    data {
+                        attributes {
+                            slug
+                        }
+                    }
+                }
             }
         }
     }

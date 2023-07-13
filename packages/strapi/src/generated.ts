@@ -1170,15 +1170,18 @@ export type UpdateHomeMutationVariables = Exact<{ [key: string]: never }>
 
 export interface UpdateHomeMutation { __typename?: 'Mutation'; updateHome?: { __typename?: 'HomeEntityResponse'; data?: { __typename?: 'HomeEntity'; id?: string | null } | null } | null }
 
-export type GetPostsQueryVariables = Exact<{ [key: string]: never }>
-
-export interface GetPostsQuery { __typename?: 'Query'; content?: { __typename?: 'PostEntityResponseCollection'; data: Array<{ __typename?: 'PostEntity'; id?: string | null; attributes?: { __typename?: 'Post'; title?: string | null } | null }> } | null }
-
-export type GetPostQueryVariables = Exact<{
-  id?: InputMaybe<Scalars['ID']['input']>
+export type GetPostsQueryVariables = Exact<{
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
 }>
 
-export interface GetPostQuery { __typename?: 'Query'; content?: { __typename?: 'PostEntityResponse'; data?: { __typename?: 'PostEntity'; attributes?: { __typename?: 'Post'; title?: string | null } | null } | null } | null }
+export interface GetPostsQuery { __typename?: 'Query'; content?: { __typename?: 'PostEntityResponseCollection'; data: Array<{ __typename?: 'PostEntity'; id?: string | null; attributes?: { __typename?: 'Post'; title?: string | null; slug?: string | null } | null }> } | null }
+
+export type GetPostQueryVariables = Exact<{
+  slug?: InputMaybe<Scalars['String']['input']>
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
+}>
+
+export interface GetPostQuery { __typename?: 'Query'; content?: { __typename?: 'PostEntityResponseCollection'; data: Array<{ __typename?: 'PostEntity'; id?: string | null; attributes?: { __typename?: 'Post'; title?: string | null; slug?: string | null; localizations?: { __typename?: 'PostRelationResponseCollection'; data: Array<{ __typename?: 'PostEntity'; attributes?: { __typename?: 'Post'; slug?: string | null } | null }> } | null } | null }> } | null }
 
 export const UpdateHomeDocument = gql`
     mutation updateHome {
@@ -1190,23 +1193,37 @@ export const UpdateHomeDocument = gql`
 }
     `
 export const GetPostsDocument = gql`
-    query getPosts {
-  content: posts {
+    query getPosts($locale: I18NLocaleCode) {
+  content: posts(locale: $locale) {
     data {
       id
       attributes {
         title
+        slug
       }
     }
   }
 }
     `
 export const GetPostDocument = gql`
-    query getPost($id: ID) {
-  content: post(id: $id) {
+    query getPost($slug: String, $locale: I18NLocaleCode) {
+  content: posts(
+    locale: $locale
+    filters: {slug: {eq: $slug}}
+    pagination: {limit: 1}
+  ) {
     data {
+      id
       attributes {
         title
+        slug
+        localizations {
+          data {
+            attributes {
+              slug
+            }
+          }
+        }
       }
     }
   }
