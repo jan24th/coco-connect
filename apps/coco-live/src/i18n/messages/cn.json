@@ -4,6 +4,8 @@
   "COCO LIVE": "椰子",
   "Timeline": "时间轴",
   "Blog": "博客",
-  "Chinese": "中文",
-  "English": "英文"
+  "Home": "首页",
+  "Chinese": "中",
+  "English": "英",
+  "Name": "{{first}}{{last}}"
 }

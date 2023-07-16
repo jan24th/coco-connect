@@ -3,8 +3,7 @@ query getPosts($locale: I18NLocaleCode) {
         data {
             id
             attributes {
-                title
-                slug
+               ...Post
             }
         }
     }
@@ -15,12 +14,15 @@ query getPost($slug: String, $locale: I18NLocaleCode) {
         data {
             id
             attributes {
-                title
-                slug
+                ...Post
+                seo {
+                    ...Seo
+                }
                 localizations {
                     data {
                         attributes {
                             slug
+                            locale
                         }
                     }
                 }

@@ -1,0 +1,16 @@
+query getLabels($locale: I18NLocaleCode, $pagination: PaginationArg) {
+    content: labels(locale: $locale, pagination: $pagination) {
+        data {
+            id
+            attributes {
+                key
+                value
+            }
+        }
+        meta {
+            pagination {
+                pageCount
+            }
+        }
+    }
+}

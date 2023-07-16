@@ -4,7 +4,18 @@
     "preserveSymlinks": false,
     "esModuleInterop": true,
     "plugins": [{ "name": "next" }],
-    "types": ["node", "jest", "@testing-library/jest-dom"]
+    "types": ["node", "jest", "@testing-library/jest-dom"],
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["src/components/*"],
+      "@/components": ["src/components"],
+      "@/utils-server": ["src/utils/index.server.ts"],
+      "@/utils": ["src/utils/index.ts"],
+      "@/i18n/*": ["src/i18n/*"],
+      "@/i18n": ["src/i18n"],
+      "@/app/*": ["src/app/[locale]/*"],
+      "@/app": ["src/app/[locale]"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

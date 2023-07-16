@@ -4,6 +4,8 @@
   "COCO LIVE": "COCO LIVE",
   "Timeline": "Timeline",
   "Blog": "Blog",
-  "Chinese": "Chinese",
-  "English":"English"
+  "Home": "Home",
+  "Chinese": "CN",
+  "English":"EN",
+  "Name": "{{last}} {{first}}"
 }
