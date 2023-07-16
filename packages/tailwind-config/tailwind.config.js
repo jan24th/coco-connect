@@ -14,7 +14,12 @@ module.exports = {
         brandblue: colors.blue[500],
         brandred: colors.red[500],
       },
+      transitionTimingFunction: {
+        toggle: 'cubic-bezier(.22,.68,0,1.71)',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

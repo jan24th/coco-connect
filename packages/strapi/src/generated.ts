@@ -25,6 +25,77 @@ export interface Scalars {
   Upload: { input: any; output: any }
 }
 
+export interface Author {
+  __typename?: 'Author'
+  avatar?: Maybe<UploadFileEntityResponse>
+  createdAt?: Maybe<Scalars['DateTime']['output']>
+  firstname?: Maybe<Scalars['String']['output']>
+  lastname?: Maybe<Scalars['String']['output']>
+  locale?: Maybe<Scalars['String']['output']>
+  localizations?: Maybe<AuthorRelationResponseCollection>
+  publishedAt?: Maybe<Scalars['DateTime']['output']>
+  seo?: Maybe<ComponentSharedSeo>
+  slug?: Maybe<Scalars['String']['output']>
+  title?: Maybe<Scalars['String']['output']>
+  updatedAt?: Maybe<Scalars['DateTime']['output']>
+}
+
+export interface AuthorLocalizationsArgs {
+  filters?: InputMaybe<AuthorFiltersInput>
+  pagination?: InputMaybe<PaginationArg>
+  publicationState?: InputMaybe<PublicationState>
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+}
+
+export interface AuthorEntity {
+  __typename?: 'AuthorEntity'
+  attributes?: Maybe<Author>
+  id?: Maybe<Scalars['ID']['output']>
+}
+
+export interface AuthorEntityResponse {
+  __typename?: 'AuthorEntityResponse'
+  data?: Maybe<AuthorEntity>
+}
+
+export interface AuthorEntityResponseCollection {
+  __typename?: 'AuthorEntityResponseCollection'
+  data: Array<AuthorEntity>
+  meta: ResponseCollectionMeta
+}
+
+export interface AuthorFiltersInput {
+  and?: InputMaybe<Array<InputMaybe<AuthorFiltersInput>>>
+  createdAt?: InputMaybe<DateTimeFilterInput>
+  firstname?: InputMaybe<StringFilterInput>
+  id?: InputMaybe<IdFilterInput>
+  lastname?: InputMaybe<StringFilterInput>
+  locale?: InputMaybe<StringFilterInput>
+  localizations?: InputMaybe<AuthorFiltersInput>
+  not?: InputMaybe<AuthorFiltersInput>
+  or?: InputMaybe<Array<InputMaybe<AuthorFiltersInput>>>
+  publishedAt?: InputMaybe<DateTimeFilterInput>
+  seo?: InputMaybe<ComponentSharedSeoFiltersInput>
+  slug?: InputMaybe<StringFilterInput>
+  title?: InputMaybe<StringFilterInput>
+  updatedAt?: InputMaybe<DateTimeFilterInput>
+}
+
+export interface AuthorInput {
+  avatar?: InputMaybe<Scalars['ID']['input']>
+  firstname?: InputMaybe<Scalars['String']['input']>
+  lastname?: InputMaybe<Scalars['String']['input']>
+  publishedAt?: InputMaybe<Scalars['DateTime']['input']>
+  seo?: InputMaybe<ComponentSharedSeoInput>
+  slug?: InputMaybe<Scalars['String']['input']>
+  title?: InputMaybe<Scalars['String']['input']>
+}
+
+export interface AuthorRelationResponseCollection {
+  __typename?: 'AuthorRelationResponseCollection'
+  data: Array<AuthorEntity>
+}
+
 export interface BooleanFilterInput {
   and?: InputMaybe<Array<InputMaybe<Scalars['Boolean']['input']>>>
   between?: InputMaybe<Array<InputMaybe<Scalars['Boolean']['input']>>>
@@ -68,50 +139,25 @@ export interface ComponentSectionRichtext {
   id: Scalars['ID']['output']
 }
 
-export interface ComponentSharedMetaSocial {
-  __typename?: 'ComponentSharedMetaSocial'
-  description: Scalars['String']['output']
-  id: Scalars['ID']['output']
-  image?: Maybe<UploadFileEntityResponse>
-  socialNetwork: Enum_Componentsharedmetasocial_Socialnetwork
-  title: Scalars['String']['output']
-}
-
-export interface ComponentSharedMetaSocialFiltersInput {
-  and?: InputMaybe<Array<InputMaybe<ComponentSharedMetaSocialFiltersInput>>>
-  description?: InputMaybe<StringFilterInput>
-  not?: InputMaybe<ComponentSharedMetaSocialFiltersInput>
-  or?: InputMaybe<Array<InputMaybe<ComponentSharedMetaSocialFiltersInput>>>
-  socialNetwork?: InputMaybe<StringFilterInput>
-  title?: InputMaybe<StringFilterInput>
-}
-
-export interface ComponentSharedMetaSocialInput {
-  description?: InputMaybe<Scalars['String']['input']>
-  id?: InputMaybe<Scalars['ID']['input']>
-  image?: InputMaybe<Scalars['ID']['input']>
-  socialNetwork?: InputMaybe<Enum_Componentsharedmetasocial_Socialnetwork>
-  title?: InputMaybe<Scalars['String']['input']>
-}
-
 export interface ComponentSharedSeo {
   __typename?: 'ComponentSharedSeo'
   canonicalURL?: Maybe<Scalars['String']['output']>
   id: Scalars['ID']['output']
   keywords?: Maybe<Scalars['String']['output']>
-  metaDescription: Scalars['String']['output']
-  metaImage: UploadFileEntityResponse
+  metaDescription?: Maybe<Scalars['String']['output']>
   metaRobots?: Maybe<Scalars['String']['output']>
-  metaSocial?: Maybe<Array<Maybe<ComponentSharedMetaSocial>>>
-  metaTitle: Scalars['String']['output']
-  metaViewport?: Maybe<Scalars['String']['output']>
-  structuredData?: Maybe<Scalars['JSON']['output']>
+  metaTitle?: Maybe<Scalars['String']['output']>
 }
 
-export interface ComponentSharedSeoMetaSocialArgs {
-  filters?: InputMaybe<ComponentSharedMetaSocialFiltersInput>
-  pagination?: InputMaybe<PaginationArg>
-  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+export interface ComponentSharedSeoFiltersInput {
+  and?: InputMaybe<Array<InputMaybe<ComponentSharedSeoFiltersInput>>>
+  canonicalURL?: InputMaybe<StringFilterInput>
+  keywords?: InputMaybe<StringFilterInput>
+  metaDescription?: InputMaybe<StringFilterInput>
+  metaRobots?: InputMaybe<StringFilterInput>
+  metaTitle?: InputMaybe<StringFilterInput>
+  not?: InputMaybe<ComponentSharedSeoFiltersInput>
+  or?: InputMaybe<Array<InputMaybe<ComponentSharedSeoFiltersInput>>>
 }
 
 export interface ComponentSharedSeoInput {
@@ -119,12 +165,8 @@ export interface ComponentSharedSeoInput {
   id?: InputMaybe<Scalars['ID']['input']>
   keywords?: InputMaybe<Scalars['String']['input']>
   metaDescription?: InputMaybe<Scalars['String']['input']>
-  metaImage?: InputMaybe<Scalars['ID']['input']>
   metaRobots?: InputMaybe<Scalars['String']['input']>
-  metaSocial?: InputMaybe<Array<InputMaybe<ComponentSharedMetaSocialInput>>>
   metaTitle?: InputMaybe<Scalars['String']['input']>
-  metaViewport?: InputMaybe<Scalars['String']['input']>
-  structuredData?: InputMaybe<Scalars['JSON']['input']>
 }
 
 export interface DateTimeFilterInput {
@@ -149,11 +191,6 @@ export interface DateTimeFilterInput {
   null?: InputMaybe<Scalars['Boolean']['input']>
   or?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>
   startsWith?: InputMaybe<Scalars['DateTime']['input']>
-}
-
-export enum Enum_Componentsharedmetasocial_Socialnetwork {
-  Facebook = 'Facebook',
-  Twitter = 'Twitter',
 }
 
 export interface Error {
@@ -192,7 +229,7 @@ export interface FloatFilterInput {
   startsWith?: InputMaybe<Scalars['Float']['input']>
 }
 
-export type GenericMorph = ComponentSectionImages | ComponentSectionRichtext | ComponentSharedMetaSocial | ComponentSharedSeo | Home | I18NLocale | Label | Post | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
+export type GenericMorph = Author | ComponentSectionImages | ComponentSectionRichtext | ComponentSharedSeo | Home | I18NLocale | Label | Post | PostTag | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
 
 export interface Home {
   __typename?: 'Home'
@@ -341,9 +378,18 @@ export interface Label {
   __typename?: 'Label'
   createdAt?: Maybe<Scalars['DateTime']['output']>
   key?: Maybe<Scalars['String']['output']>
+  locale?: Maybe<Scalars['String']['output']>
+  localizations?: Maybe<LabelRelationResponseCollection>
   publishedAt?: Maybe<Scalars['DateTime']['output']>
   updatedAt?: Maybe<Scalars['DateTime']['output']>
   value?: Maybe<Scalars['String']['output']>
+}
+
+export interface LabelLocalizationsArgs {
+  filters?: InputMaybe<LabelFiltersInput>
+  pagination?: InputMaybe<PaginationArg>
+  publicationState?: InputMaybe<PublicationState>
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
 }
 
 export interface LabelEntity {
@@ -368,6 +414,8 @@ export interface LabelFiltersInput {
   createdAt?: InputMaybe<DateTimeFilterInput>
   id?: InputMaybe<IdFilterInput>
   key?: InputMaybe<StringFilterInput>
+  locale?: InputMaybe<StringFilterInput>
+  localizations?: InputMaybe<LabelFiltersInput>
   not?: InputMaybe<LabelFiltersInput>
   or?: InputMaybe<Array<InputMaybe<LabelFiltersInput>>>
   publishedAt?: InputMaybe<DateTimeFilterInput>
@@ -381,23 +429,35 @@ export interface LabelInput {
   value?: InputMaybe<Scalars['String']['input']>
 }
 
+export interface LabelRelationResponseCollection {
+  __typename?: 'LabelRelationResponseCollection'
+  data: Array<LabelEntity>
+}
+
 export interface Mutation {
   __typename?: 'Mutation'
   /** Change user password. Confirm with the current password. */
   changePassword?: Maybe<UsersPermissionsLoginPayload>
+  createAuthor?: Maybe<AuthorEntityResponse>
+  createAuthorLocalization?: Maybe<AuthorEntityResponse>
   createHomeLocalization?: Maybe<HomeEntityResponse>
   createLabel?: Maybe<LabelEntityResponse>
+  createLabelLocalization?: Maybe<LabelEntityResponse>
   createPost?: Maybe<PostEntityResponse>
   createPostLocalization?: Maybe<PostEntityResponse>
+  createPostTag?: Maybe<PostTagEntityResponse>
+  createPostTagLocalization?: Maybe<PostTagEntityResponse>
   createUploadFile?: Maybe<UploadFileEntityResponse>
   createUploadFolder?: Maybe<UploadFolderEntityResponse>
   /** Create a new role */
   createUsersPermissionsRole?: Maybe<UsersPermissionsCreateRolePayload>
   /** Create a new user */
   createUsersPermissionsUser: UsersPermissionsUserEntityResponse
+  deleteAuthor?: Maybe<AuthorEntityResponse>
   deleteHome?: Maybe<HomeEntityResponse>
   deleteLabel?: Maybe<LabelEntityResponse>
   deletePost?: Maybe<PostEntityResponse>
+  deletePostTag?: Maybe<PostTagEntityResponse>
   deleteUploadFile?: Maybe<UploadFileEntityResponse>
   deleteUploadFolder?: Maybe<UploadFolderEntityResponse>
   /** Delete an existing role */
@@ -415,10 +475,12 @@ export interface Mutation {
   removeFile?: Maybe<UploadFileEntityResponse>
   /** Reset user password. Confirm with a code (resetToken from forgotPassword) */
   resetPassword?: Maybe<UsersPermissionsLoginPayload>
+  updateAuthor?: Maybe<AuthorEntityResponse>
   updateFileInfo: UploadFileEntityResponse
   updateHome?: Maybe<HomeEntityResponse>
   updateLabel?: Maybe<LabelEntityResponse>
   updatePost?: Maybe<PostEntityResponse>
+  updatePostTag?: Maybe<PostTagEntityResponse>
   updateUploadFile?: Maybe<UploadFileEntityResponse>
   updateUploadFolder?: Maybe<UploadFolderEntityResponse>
   /** Update an existing role */
@@ -434,6 +496,17 @@ export interface MutationChangePasswordArgs {
   passwordConfirmation: Scalars['String']['input']
 }
 
+export interface MutationCreateAuthorArgs {
+  data: AuthorInput
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
+}
+
+export interface MutationCreateAuthorLocalizationArgs {
+  data?: InputMaybe<AuthorInput>
+  id?: InputMaybe<Scalars['ID']['input']>
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
+}
+
 export interface MutationCreateHomeLocalizationArgs {
   data?: InputMaybe<HomeInput>
   id?: InputMaybe<Scalars['ID']['input']>
@@ -442,6 +515,13 @@ export interface MutationCreateHomeLocalizationArgs {
 
 export interface MutationCreateLabelArgs {
   data: LabelInput
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
+}
+
+export interface MutationCreateLabelLocalizationArgs {
+  data?: InputMaybe<LabelInput>
+  id?: InputMaybe<Scalars['ID']['input']>
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
 }
 
 export interface MutationCreatePostArgs {
@@ -451,6 +531,17 @@ export interface MutationCreatePostArgs {
 
 export interface MutationCreatePostLocalizationArgs {
   data?: InputMaybe<PostInput>
+  id?: InputMaybe<Scalars['ID']['input']>
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
+}
+
+export interface MutationCreatePostTagArgs {
+  data: PostTagInput
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
+}
+
+export interface MutationCreatePostTagLocalizationArgs {
+  data?: InputMaybe<PostTagInput>
   id?: InputMaybe<Scalars['ID']['input']>
   locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
 }
@@ -471,15 +562,26 @@ export interface MutationCreateUsersPermissionsUserArgs {
   data: UsersPermissionsUserInput
 }
 
+export interface MutationDeleteAuthorArgs {
+  id: Scalars['ID']['input']
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
+}
+
 export interface MutationDeleteHomeArgs {
   locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
 }
 
 export interface MutationDeleteLabelArgs {
   id: Scalars['ID']['input']
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
 }
 
 export interface MutationDeletePostArgs {
+  id: Scalars['ID']['input']
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
+}
+
+export interface MutationDeletePostTagArgs {
   id: Scalars['ID']['input']
   locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
 }
@@ -533,6 +635,12 @@ export interface MutationResetPasswordArgs {
   passwordConfirmation: Scalars['String']['input']
 }
 
+export interface MutationUpdateAuthorArgs {
+  data: AuthorInput
+  id: Scalars['ID']['input']
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
+}
+
 export interface MutationUpdateFileInfoArgs {
   id: Scalars['ID']['input']
   info?: InputMaybe<FileInfoInput>
@@ -546,10 +654,17 @@ export interface MutationUpdateHomeArgs {
 export interface MutationUpdateLabelArgs {
   data: LabelInput
   id: Scalars['ID']['input']
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
 }
 
 export interface MutationUpdatePostArgs {
   data: PostInput
+  id: Scalars['ID']['input']
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
+}
+
+export interface MutationUpdatePostTagArgs {
+  data: PostTagInput
   id: Scalars['ID']['input']
   locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
 }
@@ -599,12 +714,16 @@ export interface PaginationArg {
 
 export interface Post {
   __typename?: 'Post'
+  author?: Maybe<AuthorEntityResponse>
+  cover?: Maybe<UploadFileEntityResponse>
   createdAt?: Maybe<Scalars['DateTime']['output']>
   description?: Maybe<Scalars['String']['output']>
   locale?: Maybe<Scalars['String']['output']>
   localizations?: Maybe<PostRelationResponseCollection>
+  post_tags?: Maybe<PostTagRelationResponseCollection>
   publishedAt?: Maybe<Scalars['DateTime']['output']>
   sections?: Maybe<Array<Maybe<PostSectionsDynamicZone>>>
+  seo?: Maybe<ComponentSharedSeo>
   slug?: Maybe<Scalars['String']['output']>
   title?: Maybe<Scalars['String']['output']>
   updatedAt?: Maybe<Scalars['DateTime']['output']>
@@ -612,6 +731,13 @@ export interface Post {
 
 export interface PostLocalizationsArgs {
   filters?: InputMaybe<PostFiltersInput>
+  pagination?: InputMaybe<PaginationArg>
+  publicationState?: InputMaybe<PublicationState>
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+}
+
+export interface PostPost_TagsArgs {
+  filters?: InputMaybe<PostTagFiltersInput>
   pagination?: InputMaybe<PaginationArg>
   publicationState?: InputMaybe<PublicationState>
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
@@ -636,6 +762,7 @@ export interface PostEntityResponseCollection {
 
 export interface PostFiltersInput {
   and?: InputMaybe<Array<InputMaybe<PostFiltersInput>>>
+  author?: InputMaybe<AuthorFiltersInput>
   createdAt?: InputMaybe<DateTimeFilterInput>
   description?: InputMaybe<StringFilterInput>
   id?: InputMaybe<IdFilterInput>
@@ -643,16 +770,22 @@ export interface PostFiltersInput {
   localizations?: InputMaybe<PostFiltersInput>
   not?: InputMaybe<PostFiltersInput>
   or?: InputMaybe<Array<InputMaybe<PostFiltersInput>>>
+  post_tags?: InputMaybe<PostTagFiltersInput>
   publishedAt?: InputMaybe<DateTimeFilterInput>
+  seo?: InputMaybe<ComponentSharedSeoFiltersInput>
   slug?: InputMaybe<StringFilterInput>
   title?: InputMaybe<StringFilterInput>
   updatedAt?: InputMaybe<DateTimeFilterInput>
 }
 
 export interface PostInput {
+  author?: InputMaybe<Scalars['ID']['input']>
+  cover?: InputMaybe<Scalars['ID']['input']>
   description?: InputMaybe<Scalars['String']['input']>
+  post_tags?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
   publishedAt?: InputMaybe<Scalars['DateTime']['input']>
   sections?: InputMaybe<Array<Scalars['PostSectionsDynamicZoneInput']['input']>>
+  seo?: InputMaybe<ComponentSharedSeoInput>
   slug?: InputMaybe<Scalars['String']['input']>
   title?: InputMaybe<Scalars['String']['input']>
 }
@@ -664,6 +797,73 @@ export interface PostRelationResponseCollection {
 
 export type PostSectionsDynamicZone = ComponentSectionImages | ComponentSectionRichtext | Error
 
+export interface PostTag {
+  __typename?: 'PostTag'
+  createdAt?: Maybe<Scalars['DateTime']['output']>
+  locale?: Maybe<Scalars['String']['output']>
+  localizations?: Maybe<PostTagRelationResponseCollection>
+  name?: Maybe<Scalars['String']['output']>
+  posts?: Maybe<PostRelationResponseCollection>
+  publishedAt?: Maybe<Scalars['DateTime']['output']>
+  updatedAt?: Maybe<Scalars['DateTime']['output']>
+}
+
+export interface PostTagLocalizationsArgs {
+  filters?: InputMaybe<PostTagFiltersInput>
+  pagination?: InputMaybe<PaginationArg>
+  publicationState?: InputMaybe<PublicationState>
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+}
+
+export interface PostTagPostsArgs {
+  filters?: InputMaybe<PostFiltersInput>
+  pagination?: InputMaybe<PaginationArg>
+  publicationState?: InputMaybe<PublicationState>
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+}
+
+export interface PostTagEntity {
+  __typename?: 'PostTagEntity'
+  attributes?: Maybe<PostTag>
+  id?: Maybe<Scalars['ID']['output']>
+}
+
+export interface PostTagEntityResponse {
+  __typename?: 'PostTagEntityResponse'
+  data?: Maybe<PostTagEntity>
+}
+
+export interface PostTagEntityResponseCollection {
+  __typename?: 'PostTagEntityResponseCollection'
+  data: Array<PostTagEntity>
+  meta: ResponseCollectionMeta
+}
+
+export interface PostTagFiltersInput {
+  and?: InputMaybe<Array<InputMaybe<PostTagFiltersInput>>>
+  createdAt?: InputMaybe<DateTimeFilterInput>
+  id?: InputMaybe<IdFilterInput>
+  locale?: InputMaybe<StringFilterInput>
+  localizations?: InputMaybe<PostTagFiltersInput>
+  name?: InputMaybe<StringFilterInput>
+  not?: InputMaybe<PostTagFiltersInput>
+  or?: InputMaybe<Array<InputMaybe<PostTagFiltersInput>>>
+  posts?: InputMaybe<PostFiltersInput>
+  publishedAt?: InputMaybe<DateTimeFilterInput>
+  updatedAt?: InputMaybe<DateTimeFilterInput>
+}
+
+export interface PostTagInput {
+  name?: InputMaybe<Scalars['String']['input']>
+  posts?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
+  publishedAt?: InputMaybe<Scalars['DateTime']['input']>
+}
+
+export interface PostTagRelationResponseCollection {
+  __typename?: 'PostTagRelationResponseCollection'
+  data: Array<PostTagEntity>
+}
+
 export enum PublicationState {
   Live = 'LIVE',
   Preview = 'PREVIEW',
@@ -671,6 +871,8 @@ export enum PublicationState {
 
 export interface Query {
   __typename?: 'Query'
+  author?: Maybe<AuthorEntityResponse>
+  authors?: Maybe<AuthorEntityResponseCollection>
   home?: Maybe<HomeEntityResponse>
   i18NLocale?: Maybe<I18NLocaleEntityResponse>
   i18NLocales?: Maybe<I18NLocaleEntityResponseCollection>
@@ -678,6 +880,8 @@ export interface Query {
   labels?: Maybe<LabelEntityResponseCollection>
   me?: Maybe<UsersPermissionsMe>
   post?: Maybe<PostEntityResponse>
+  postTag?: Maybe<PostTagEntityResponse>
+  postTags?: Maybe<PostTagEntityResponseCollection>
   posts?: Maybe<PostEntityResponseCollection>
   uploadFile?: Maybe<UploadFileEntityResponse>
   uploadFiles?: Maybe<UploadFileEntityResponseCollection>
@@ -687,6 +891,19 @@ export interface Query {
   usersPermissionsRoles?: Maybe<UsersPermissionsRoleEntityResponseCollection>
   usersPermissionsUser?: Maybe<UsersPermissionsUserEntityResponse>
   usersPermissionsUsers?: Maybe<UsersPermissionsUserEntityResponseCollection>
+}
+
+export interface QueryAuthorArgs {
+  id?: InputMaybe<Scalars['ID']['input']>
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
+}
+
+export interface QueryAuthorsArgs {
+  filters?: InputMaybe<AuthorFiltersInput>
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
+  pagination?: InputMaybe<PaginationArg>
+  publicationState?: InputMaybe<PublicationState>
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
 }
 
 export interface QueryHomeArgs {
@@ -706,10 +923,12 @@ export interface QueryI18NLocalesArgs {
 
 export interface QueryLabelArgs {
   id?: InputMaybe<Scalars['ID']['input']>
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
 }
 
 export interface QueryLabelsArgs {
   filters?: InputMaybe<LabelFiltersInput>
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
   pagination?: InputMaybe<PaginationArg>
   publicationState?: InputMaybe<PublicationState>
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
@@ -718,6 +937,19 @@ export interface QueryLabelsArgs {
 export interface QueryPostArgs {
   id?: InputMaybe<Scalars['ID']['input']>
   locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
+}
+
+export interface QueryPostTagArgs {
+  id?: InputMaybe<Scalars['ID']['input']>
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
+}
+
+export interface QueryPostTagsArgs {
+  filters?: InputMaybe<PostTagFiltersInput>
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
+  pagination?: InputMaybe<PaginationArg>
+  publicationState?: InputMaybe<PublicationState>
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
 }
 
 export interface QueryPostsArgs {
@@ -1170,24 +1402,141 @@ export type UpdateHomeMutationVariables = Exact<{ [key: string]: never }>
 
 export interface UpdateHomeMutation { __typename?: 'Mutation'; updateHome?: { __typename?: 'HomeEntityResponse'; data?: { __typename?: 'HomeEntity'; id?: string | null } | null } | null }
 
+export interface ImageFragment { __typename?: 'UploadFileEntity'; id?: string | null; attributes?: { __typename?: 'UploadFile'; url: string; height?: number | null; width?: number | null } | null }
+
+export interface PostTagFragment { __typename?: 'PostTagEntity'; id?: string | null; attributes?: { __typename?: 'PostTag'; name?: string | null } | null }
+
+export interface SeoFragment { __typename?: 'ComponentSharedSeo'; metaDescription?: string | null; metaTitle?: string | null; metaRobots?: string | null; keywords?: string | null; canonicalURL?: string | null }
+
+export interface AuthorFragment { __typename?: 'Author'; firstname?: string | null; lastname?: string | null; title?: string | null; slug?: string | null; avatar?: { __typename?: 'UploadFileEntityResponse'; data?: { __typename?: 'UploadFileEntity'; id?: string | null; attributes?: { __typename?: 'UploadFile'; url: string; height?: number | null; width?: number | null } | null } | null } | null }
+
+export interface PostFragment { __typename?: 'Post'; updatedAt?: string | null; publishedAt?: string | null; title?: string | null; slug?: string | null; description?: string | null; cover?: { __typename?: 'UploadFileEntityResponse'; data?: { __typename?: 'UploadFileEntity'; id?: string | null; attributes?: { __typename?: 'UploadFile'; url: string; height?: number | null; width?: number | null } | null } | null } | null; post_tags?: { __typename?: 'PostTagRelationResponseCollection'; data: Array<{ __typename?: 'PostTagEntity'; id?: string | null; attributes?: { __typename?: 'PostTag'; name?: string | null } | null }> } | null; author?: { __typename?: 'AuthorEntityResponse'; data?: { __typename?: 'AuthorEntity'; attributes?: { __typename?: 'Author'; firstname?: string | null; lastname?: string | null; title?: string | null; slug?: string | null; avatar?: { __typename?: 'UploadFileEntityResponse'; data?: { __typename?: 'UploadFileEntity'; id?: string | null; attributes?: { __typename?: 'UploadFile'; url: string; height?: number | null; width?: number | null } | null } | null } | null } | null } | null } | null; sections?: Array<{ __typename: 'ComponentSectionImages'; Gallery?: boolean | null; medias: { __typename?: 'UploadFileRelationResponseCollection'; data: Array<{ __typename?: 'UploadFileEntity'; id?: string | null; attributes?: { __typename?: 'UploadFile'; url: string; height?: number | null; width?: number | null } | null }> } } | { __typename: 'ComponentSectionRichtext'; content?: string | null } | { __typename: 'Error' } | null> | null }
+
+export type GetLabelsQueryVariables = Exact<{
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
+  pagination?: InputMaybe<PaginationArg>
+}>
+
+export interface GetLabelsQuery { __typename?: 'Query'; content?: { __typename?: 'LabelEntityResponseCollection'; data: Array<{ __typename?: 'LabelEntity'; id?: string | null; attributes?: { __typename?: 'Label'; key?: string | null; value?: string | null } | null }>; meta: { __typename?: 'ResponseCollectionMeta'; pagination: { __typename?: 'Pagination'; pageCount: number } } } | null }
+
 export type GetPostsQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
 }>
 
-export interface GetPostsQuery { __typename?: 'Query'; content?: { __typename?: 'PostEntityResponseCollection'; data: Array<{ __typename?: 'PostEntity'; id?: string | null; attributes?: { __typename?: 'Post'; title?: string | null; slug?: string | null } | null }> } | null }
+export interface GetPostsQuery { __typename?: 'Query'; content?: { __typename?: 'PostEntityResponseCollection'; data: Array<{ __typename?: 'PostEntity'; id?: string | null; attributes?: { __typename?: 'Post'; updatedAt?: string | null; publishedAt?: string | null; title?: string | null; slug?: string | null; description?: string | null; cover?: { __typename?: 'UploadFileEntityResponse'; data?: { __typename?: 'UploadFileEntity'; id?: string | null; attributes?: { __typename?: 'UploadFile'; url: string; height?: number | null; width?: number | null } | null } | null } | null; post_tags?: { __typename?: 'PostTagRelationResponseCollection'; data: Array<{ __typename?: 'PostTagEntity'; id?: string | null; attributes?: { __typename?: 'PostTag'; name?: string | null } | null }> } | null; author?: { __typename?: 'AuthorEntityResponse'; data?: { __typename?: 'AuthorEntity'; attributes?: { __typename?: 'Author'; firstname?: string | null; lastname?: string | null; title?: string | null; slug?: string | null; avatar?: { __typename?: 'UploadFileEntityResponse'; data?: { __typename?: 'UploadFileEntity'; id?: string | null; attributes?: { __typename?: 'UploadFile'; url: string; height?: number | null; width?: number | null } | null } | null } | null } | null } | null } | null; sections?: Array<{ __typename: 'ComponentSectionImages'; Gallery?: boolean | null; medias: { __typename?: 'UploadFileRelationResponseCollection'; data: Array<{ __typename?: 'UploadFileEntity'; id?: string | null; attributes?: { __typename?: 'UploadFile'; url: string; height?: number | null; width?: number | null } | null }> } } | { __typename: 'ComponentSectionRichtext'; content?: string | null } | { __typename: 'Error' } | null> | null } | null }> } | null }
 
 export type GetPostQueryVariables = Exact<{
   slug?: InputMaybe<Scalars['String']['input']>
   locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>
 }>
 
-export interface GetPostQuery { __typename?: 'Query'; content?: { __typename?: 'PostEntityResponseCollection'; data: Array<{ __typename?: 'PostEntity'; id?: string | null; attributes?: { __typename?: 'Post'; title?: string | null; slug?: string | null; localizations?: { __typename?: 'PostRelationResponseCollection'; data: Array<{ __typename?: 'PostEntity'; attributes?: { __typename?: 'Post'; slug?: string | null } | null }> } | null } | null }> } | null }
+export interface GetPostQuery { __typename?: 'Query'; content?: { __typename?: 'PostEntityResponseCollection'; data: Array<{ __typename?: 'PostEntity'; id?: string | null; attributes?: { __typename?: 'Post'; updatedAt?: string | null; publishedAt?: string | null; title?: string | null; slug?: string | null; description?: string | null; seo?: { __typename?: 'ComponentSharedSeo'; metaDescription?: string | null; metaTitle?: string | null; metaRobots?: string | null; keywords?: string | null; canonicalURL?: string | null } | null; localizations?: { __typename?: 'PostRelationResponseCollection'; data: Array<{ __typename?: 'PostEntity'; attributes?: { __typename?: 'Post'; slug?: string | null; locale?: string | null } | null }> } | null; cover?: { __typename?: 'UploadFileEntityResponse'; data?: { __typename?: 'UploadFileEntity'; id?: string | null; attributes?: { __typename?: 'UploadFile'; url: string; height?: number | null; width?: number | null } | null } | null } | null; post_tags?: { __typename?: 'PostTagRelationResponseCollection'; data: Array<{ __typename?: 'PostTagEntity'; id?: string | null; attributes?: { __typename?: 'PostTag'; name?: string | null } | null }> } | null; author?: { __typename?: 'AuthorEntityResponse'; data?: { __typename?: 'AuthorEntity'; attributes?: { __typename?: 'Author'; firstname?: string | null; lastname?: string | null; title?: string | null; slug?: string | null; avatar?: { __typename?: 'UploadFileEntityResponse'; data?: { __typename?: 'UploadFileEntity'; id?: string | null; attributes?: { __typename?: 'UploadFile'; url: string; height?: number | null; width?: number | null } | null } | null } | null } | null } | null } | null; sections?: Array<{ __typename: 'ComponentSectionImages'; Gallery?: boolean | null; medias: { __typename?: 'UploadFileRelationResponseCollection'; data: Array<{ __typename?: 'UploadFileEntity'; id?: string | null; attributes?: { __typename?: 'UploadFile'; url: string; height?: number | null; width?: number | null } | null }> } } | { __typename: 'ComponentSectionRichtext'; content?: string | null } | { __typename: 'Error' } | null> | null } | null }> } | null }
 
+export const SeoFragmentDoc = gql`
+    fragment Seo on ComponentSharedSeo {
+  metaDescription
+  metaTitle
+  metaRobots
+  keywords
+  canonicalURL
+}
+    `
+export const ImageFragmentDoc = gql`
+    fragment Image on UploadFileEntity {
+  id
+  attributes {
+    url
+    height
+    width
+  }
+}
+    `
+export const PostTagFragmentDoc = gql`
+    fragment PostTag on PostTagEntity {
+  id
+  attributes {
+    name
+  }
+}
+    `
+export const AuthorFragmentDoc = gql`
+    fragment Author on Author {
+  firstname
+  lastname
+  title
+  slug
+  avatar {
+    data {
+      ...Image
+    }
+  }
+}
+    ${ImageFragmentDoc}`
+export const PostFragmentDoc = gql`
+    fragment Post on Post {
+  updatedAt
+  publishedAt
+  title
+  slug
+  description
+  cover {
+    data {
+      ...Image
+    }
+  }
+  post_tags {
+    data {
+      ...PostTag
+    }
+  }
+  author {
+    data {
+      attributes {
+        ...Author
+      }
+    }
+  }
+  sections {
+    __typename
+    ... on ComponentSectionRichtext {
+      content
+    }
+    ... on ComponentSectionImages {
+      Gallery
+      medias {
+        data {
+          ...Image
+        }
+      }
+    }
+  }
+}
+    ${ImageFragmentDoc}
+${PostTagFragmentDoc}
+${AuthorFragmentDoc}`
 export const UpdateHomeDocument = gql`
     mutation updateHome {
   updateHome(data: {seo: {keywords: "a"}}) {
     data {
       id
+    }
+  }
+}
+    `
+export const GetLabelsDocument = gql`
+    query getLabels($locale: I18NLocaleCode, $pagination: PaginationArg) {
+  content: labels(locale: $locale, pagination: $pagination) {
+    data {
+      id
+      attributes {
+        key
+        value
+      }
+    }
+    meta {
+      pagination {
+        pageCount
+      }
     }
   }
 }
@@ -1198,13 +1547,12 @@ export const GetPostsDocument = gql`
     data {
       id
       attributes {
-        title
-        slug
+        ...Post
       }
     }
   }
 }
-    `
+    ${PostFragmentDoc}`
 export const GetPostDocument = gql`
     query getPost($slug: String, $locale: I18NLocaleCode) {
   content: posts(
@@ -1215,12 +1563,15 @@ export const GetPostDocument = gql`
     data {
       id
       attributes {
-        title
-        slug
+        ...Post
+        seo {
+          ...Seo
+        }
         localizations {
           data {
             attributes {
               slug
+              locale
             }
           }
         }
@@ -1228,7 +1579,8 @@ export const GetPostDocument = gql`
     }
   }
 }
-    `
+    ${PostFragmentDoc}
+${SeoFragmentDoc}`
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?: Record<string, string>) => Promise<T>, operationName: string, operationType?: string) => Promise<T>
 
@@ -1238,6 +1590,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
   return {
     updateHome(variables?: UpdateHomeMutationVariables, requestHeaders?: Dom.RequestInit['headers']): Promise<UpdateHomeMutation> {
       return withWrapper(wrappedRequestHeaders => client.request<UpdateHomeMutation>(UpdateHomeDocument, variables, { ...requestHeaders, ...wrappedRequestHeaders }), 'updateHome', 'mutation')
+    },
+    getLabels(variables?: GetLabelsQueryVariables, requestHeaders?: Dom.RequestInit['headers']): Promise<GetLabelsQuery> {
+      return withWrapper(wrappedRequestHeaders => client.request<GetLabelsQuery>(GetLabelsDocument, variables, { ...requestHeaders, ...wrappedRequestHeaders }), 'getLabels', 'query')
     },
     getPosts(variables?: GetPostsQueryVariables, requestHeaders?: Dom.RequestInit['headers']): Promise<GetPostsQuery> {
       return withWrapper(wrappedRequestHeaders => client.request<GetPostsQuery>(GetPostsDocument, variables, { ...requestHeaders, ...wrappedRequestHeaders }), 'getPosts', 'query')

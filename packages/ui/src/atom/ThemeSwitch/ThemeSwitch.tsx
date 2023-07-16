@@ -1,19 +1,14 @@
 import { Switch } from '@headlessui/react'
-import { motion } from 'framer-motion'
 import type { SVGProps } from 'react'
+import clsx from 'clsx'
+import { useLabel } from '../Locale/Locale'
 
-const positionClass = 'absolute inset-0 flex justify-center items-center'
-const active = { opacity: 1, x: 0, y: 0, scale: 1 }
-const hideSun = { opacity: 0, x: 0, y: -16, scale: 1 }
-const hideMoon = { opacity: 0, x: 0, y: 16, scale: 1 }
-const unableSun = { scale: 0.5, opacity: 1, y: -4, x: 4 }
-const unableMoon = { scale: 0.5, opacity: 1, y: 4, x: -4 }
-const transition = {
-  duration: 0.5,
-  type: 'spring',
-  damping: 10,
-  stiffness: 100,
-}
+const positionClass = 'absolute inset-0 flex justify-center items-center duration-500 transition-all ease-toggle'
+const active = 'translate-x-0 translate-y-0 scale-100 opacity-100'
+const hideSun = 'translate-x-0 -translate-y-4 scale-100 opacity-0'
+const hideMoon = 'translate-x-0 translate-y-4 scale-100 opacity-0'
+const unableSun = 'translate-x-1 -translate-y-1 scale-50 opacity-100'
+const unableMoon = '-translate-x-1 translate-y-1 scale-50 opacity-100'
 
 export function ThemeSwitch({
   theme,
@@ -25,44 +20,30 @@ export function ThemeSwitch({
   enabled?: boolean
 }) {
   const isLight = theme === 'light'
-
+  const status = enabled ? theme : 'unable'
+  const $t = useLabel()
   return (
     <Switch
       checked={enabled ? isLight : false}
-      onChange={() => enabled && setTheme(isLight ? 'dark' : 'light')}
+      onChange={() => {
+        if (enabled)
+          setTheme(isLight ? 'dark' : 'light')
+      }}
       className="relative h-4 w-4"
     >
-      <motion.span animate={enabled ? theme : 'unable'}>
-        <motion.span
-          className={positionClass}
-          initial={unableSun}
-          variants={{
-            unable: unableSun,
-            dark: hideSun,
-            light: active,
-          }}
-          transition={transition}
-        >
-          <IcOutlineLightMode className="fill-current" />
-        </motion.span>
-        <motion.span
-          className={positionClass}
-          initial={unableMoon}
-          variants={{
-            unable: unableMoon,
-            dark: active,
-            light: hideMoon,
-          }}
-          transition={transition}
-        >
-          <IcOutlineModeNight className="fill-current" />
-        </motion.span>
-      </motion.span>
+      <span
+        className={clsx(positionClass, { [active]: status === 'light', [hideSun]: status === 'dark', [unableSun]: status === 'unable' })}
+      >
+        <IcOutlineLightMode className="fill-current" />
+      </span>
+      <span
+        className={clsx(positionClass, { [hideMoon]: status === 'light', [active]: status === 'dark', [unableMoon]: status === 'unable' })}
+      >
+        <IcOutlineModeNight className="fill-current" />
+      </span>
 
       <span className="sr-only">
-        {enabled
-          ? `toggle theme to ${isLight ? 'dark' : 'light'}`
-          : 'toggle theme is not enabled'}
+        {enabled ? $t('Toggle theme to', { mode: (isLight ? $t('Dark mode') : $t('Light mode')).toLowerCase() }) : $t('Toggle theme')}
       </span>
     </Switch>
   )

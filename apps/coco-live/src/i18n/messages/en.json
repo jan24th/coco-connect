@@ -1,0 +1,15 @@
+{
+  "Hello COCO LIVE!": "Hello Coco!",
+  "work in progress": "work in progress",
+  "COCO LIVE": "COCO LIVE",
+  "Timeline": "Timeline",
+  "Blog": "Blog",
+  "Home": "Home",
+  "Chinese": "CN",
+  "English":"EN",
+  "Name": "{{last}} {{first}}",
+  "Dark mode": "Dark mode",
+  "Light mode": "Light mode",
+  "Toggle theme to": "Toggle theme to {{mode}}",
+  "Toggle theme": "Toggle theme"
+}

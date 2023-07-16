@@ -1,11 +1,15 @@
-const withNextIntl = require('next-intl/plugin')(
-  // This is the default (also the `src` folder is supported out of the box)
-  './i18n/index.js',
-)
-
-module.exports = withNextIntl({
+module.exports = {
   reactStrictMode: false,
   experimental: {
     serverActions: true,
   },
-})
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'coco-connect-1259017271.cos.ap-guangzhou.myqcloud.com',
+        pathname: '/strapi/**',
+      },
+    ],
+  },
+}

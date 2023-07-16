@@ -1,0 +1,71 @@
+fragment Image on UploadFileEntity{
+    id
+    attributes {
+        url
+        height
+        width
+    }
+}
+fragment PostTag on PostTagEntity {
+    id
+    attributes {
+        name
+    }
+}
+fragment Seo on ComponentSharedSeo {
+    metaDescription
+    metaTitle
+    metaRobots
+    keywords
+    canonicalURL
+}
+fragment Author on Author {
+    firstname
+    lastname
+    title
+    slug
+    avatar {
+        data {
+            ...Image
+        }
+    }
+}
+
+fragment Post on Post {
+    updatedAt
+    publishedAt
+    title
+    slug
+    description
+    cover {
+        data {
+            ...Image
+        }
+    }
+    post_tags {
+        data {
+            ...PostTag
+        }
+    }
+    author {
+        data {
+            attributes {
+                ...Author
+            }
+        }
+    }
+    sections {
+        __typename
+        ... on ComponentSectionRichtext {
+            content
+        }
+        ... on ComponentSectionImages{
+            Gallery
+            medias {
+                data {
+                    ...Image
+                }
+            }
+        }
+    }
+}
