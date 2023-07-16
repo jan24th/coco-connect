@@ -1,6 +1,6 @@
 import 'server-only'
 import { headers } from 'next/headers'
-import { typedBoolean } from 'shared'
+import { typedBoolean } from 'helper'
 import { getLocales } from '@/app/context'
 import type { Locale } from '@/i18n/i18n-config'
 

@@ -1,4 +1,4 @@
-import { typedBoolean } from 'shared'
+import { typedBoolean } from 'helper'
 import { ServerLink } from './ServerLink'
 import { getPathName } from '@/utils-server'
 

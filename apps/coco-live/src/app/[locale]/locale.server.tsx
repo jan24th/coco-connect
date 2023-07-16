@@ -1,5 +1,5 @@
 import 'server-only'
-import { replaceWithObj } from 'shared'
+import { replaceWithObj } from 'helper'
 import type { Locale } from '@/i18n/i18n-config'
 import { initLabels } from '@/i18n/i18n.server'
 import { getLabels, setLabels, setLocale } from '@/app/context'

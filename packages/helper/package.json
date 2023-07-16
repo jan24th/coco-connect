@@ -1,11 +1,14 @@
 {
-  "name": "shared",
+  "name": "helper",
   "version": "0.0.0",
   "sideEffects": [
     "**/*.css"
   ],
-  "types": "./src/index.ts",
-  "main": "./src/index.ts",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./dist",
+    "./styles.css": "./dist/index.css"
+  },
   "license": "MIT",
   "scripts": {
     "build": "tsup",

@@ -39,7 +39,7 @@
     "react": "^18.2.0",
     "tailwind-config": "workspace:*",
     "tsconfig": "workspace:*",
-    "shared": "workspace:*",
+    "helper": "workspace:*",
     "tsup": "^7.1.0",
     "vite": "^4.4.3",
     "vitest": "^0.33.0"

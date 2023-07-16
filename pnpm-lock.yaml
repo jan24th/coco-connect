@@ -56,6 +56,9 @@ importers:
       graphql:
         specifier: ^16.7.1
         version: registry.npmmirror.com/graphql@16.7.1
+      helper:
+        specifier: workspace:*
+        version: link:../../packages/helper
       jest:
         specifier: ^29.6.1
         version: registry.npmmirror.com/jest@29.6.1(@types/node@18.16.19)(ts-node@10.9.1)
@@ -86,9 +89,6 @@ importers:
       server-only:
         specifier: ^0.0.1
         version: registry.npmmirror.com/server-only@0.0.1
-      shared:
-        specifier: workspace:*
-        version: link:../../packages/shared
       strapi:
         specifier: workspace:*
         version: link:../../packages/strapi
@@ -225,7 +225,7 @@ importers:
         specifier: ^3.13.0
         version: registry.npmmirror.com/eslint-plugin-tailwindcss@3.13.0(tailwindcss@3.3.2)
 
-  packages/shared:
+  packages/helper:
     devDependencies:
       eslint-config-custom:
         specifier: workspace:*
@@ -355,6 +355,9 @@ importers:
       eslint-config-custom:
         specifier: workspace:*
         version: link:../eslint-config-custom
+      helper:
+        specifier: workspace:*
+        version: link:../helper
       jsdom:
         specifier: ^22.1.0
         version: registry.npmmirror.com/jsdom@22.1.0
@@ -364,9 +367,6 @@ importers:
       react:
         specifier: ^18.2.0
         version: registry.npmmirror.com/react@18.2.0
-      shared:
-        specifier: workspace:*
-        version: link:../shared
       tailwind-config:
         specifier: workspace:*
         version: link:../tailwind-config

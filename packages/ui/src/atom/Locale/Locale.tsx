@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from 'react'
 import { createContext, useContext } from 'react'
-import { replaceWithObj } from 'shared'
+import { replaceWithObj } from 'helper'
 
 export interface LocaleLabels {
   [key: string]: string

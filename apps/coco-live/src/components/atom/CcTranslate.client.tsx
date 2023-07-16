@@ -3,7 +3,7 @@ import React, { Fragment } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 import { Popover, Transition } from '@headlessui/react'
 import Link from 'next/link'
-import { typedBoolean } from 'shared'
+import { typedBoolean } from 'helper'
 import clsx from 'clsx'
 import type { Locale } from '@/i18n/i18n-config'
 

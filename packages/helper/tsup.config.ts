@@ -4,8 +4,8 @@ import { defineConfig } from 'tsup'
 import { globby } from 'globby'
 
 export default defineConfig(async (options: Options) => {
-  const entryPoints = await globby(['src/**/*.tsx'], {
-    ignore: ['**/*.test.tsx', '**/*.spec.tsx', '**/*.stories.tsx'],
+  const entryPoints = await globby(['src/**/*.ts'], {
+    ignore: [],
   })
   return {
     treeshake: true,
@@ -15,7 +15,7 @@ export default defineConfig(async (options: Options) => {
     dts: true,
     minify: true,
     clean: true,
-    external: ['react', 'helper'],
+    external: ['react'],
     ...options,
   }
 })

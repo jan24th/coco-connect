@@ -1,6 +1,6 @@
 import type { ComponentProps } from 'react'
 import Link from 'next/link'
-import { typedBoolean } from 'shared'
+import { typedBoolean } from 'helper'
 import clsx from 'clsx'
 import { getLocale, getLocales } from '@/app/context'
 import type { Locale } from '@/i18n/i18n-config'

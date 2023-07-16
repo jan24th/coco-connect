@@ -25,7 +25,7 @@ export const Heading: HeadingComponent = ({ children, level, ...props }) => {
 export function RenderContent({ content }: { content: string }) {
   return <ReactMarkdown children={content}
     components={{ h1: Heading, h2: Heading }}
-    className="prose prose-zinc dark:prose-invert mx-auto max-w-3xl px-6 lg:px-8"
+    className="prose prose-zinc mx-auto max-w-3xl px-6 dark:prose-invert lg:px-8"
   />
 }
 export default async function Post() {
