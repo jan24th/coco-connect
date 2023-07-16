@@ -1,6 +1,7 @@
 import { Switch } from '@headlessui/react'
 import type { SVGProps } from 'react'
 import clsx from 'clsx'
+import { useLocale } from '../Locale/Locale'
 
 const positionClass = 'absolute inset-0 flex justify-center items-center duration-500 transition-all ease-toggle'
 const active = 'translate-x-0 translate-y-0 scale-100 opacity-100'
@@ -20,6 +21,7 @@ export function ThemeSwitch({
 }) {
   const isLight = theme === 'light'
   const status = enabled ? theme : 'unable'
+  const $t = useLocale()
   return (
     <Switch
       checked={enabled ? isLight : false}
@@ -41,9 +43,7 @@ export function ThemeSwitch({
       </span>
 
       <span className="sr-only">
-        {enabled
-          ? `toggle theme to ${isLight ? 'dark' : 'light'}`
-          : 'toggle theme is not enabled'}
+        {enabled ? $t('Toggle theme to', { mode: (isLight ? $t('Dark mode') : $t('Light mode')).toLowerCase() }) : $t('Toggle theme')}
       </span>
     </Switch>
   )

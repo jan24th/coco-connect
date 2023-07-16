@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import React from 'react'
 import { Page } from '@/components/atom/Layout'
 import { ServerLink } from '@/components/atom/ServerLink'
-import { initLocale, t } from '@/app/context'
 import type { LocaleParamsProps } from '@/i18n/i18n-config'
+import { initLocale, t } from '@/app/locale.server'
 
 export const metadata: Metadata = {
   title: 'COCO LIVE',

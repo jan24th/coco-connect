@@ -364,6 +364,9 @@ importers:
       react:
         specifier: ^18.2.0
         version: registry.npmmirror.com/react@18.2.0
+      shared:
+        specifier: workspace:*
+        version: link:../shared
       tailwind-config:
         specifier: workspace:*
         version: link:../tailwind-config

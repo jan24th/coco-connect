@@ -5,8 +5,9 @@ import { createElement } from 'react'
 
 import { getPost } from './getPost.server'
 import { getSlug } from './context'
-import { getLocale, t } from '@/app/context'
+import { getLocale } from '@/app/context'
 import { Time } from '@/components/atom/Time'
+import { t } from '@/app/locale.server'
 
 export const Heading: HeadingComponent = ({ children, level, ...props }) => {
   const id = children?.at(0)?.toString()?.toLowerCase()?.replace(/\s/g, '-')

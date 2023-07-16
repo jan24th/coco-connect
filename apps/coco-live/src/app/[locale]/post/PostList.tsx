@@ -1,9 +1,10 @@
 import type { PostFragment } from 'strapi'
 import Image from 'next/image'
-import { getLocale, t } from '../context'
+import { getLocale } from '../context'
 import { getPosts } from './getPosts.server'
 import { ServerLink } from '@/components/atom/ServerLink'
 import { Time } from '@/components/atom/Time'
+import { t } from '@/app/locale.server'
 
 export function PostListSkeletons() {
   return <ul>

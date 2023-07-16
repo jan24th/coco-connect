@@ -4,14 +4,14 @@ import { preloadPosts } from './getPosts.server'
 import PostList from './PostList'
 import type { LocaleParamsProps } from '@/i18n/i18n-config'
 import { Page } from '@/components/atom/Layout'
-import { setLocale } from '@/app/context'
+import { initLocale } from '@/app/locale.server'
 
 export const metadata: Metadata = {
   title: 'COCO LIVE',
 }
 export const revalidate = 60
 export default async function Index({ params: { locale } }: LocaleParamsProps) {
-  setLocale(locale)
+  await initLocale(locale)
   preloadPosts(locale)
 
   return (

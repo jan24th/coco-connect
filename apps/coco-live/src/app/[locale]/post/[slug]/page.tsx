@@ -4,7 +4,7 @@ import { getSEO } from '../../../../utils/meta.server'
 import { getPost, preloadPost } from './getPost.server'
 import Post from './Post'
 import { setSlug } from './context'
-import { initLocale, t } from '@/app/context'
+import { initLocale, t } from '@/app/locale.server'
 import { Page } from '@/components/atom/Layout'
 import type { LocaleParamsProps } from '@/i18n/i18n-config'
 

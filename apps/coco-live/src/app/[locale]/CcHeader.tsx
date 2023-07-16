@@ -1,8 +1,9 @@
-import { getLocale, t } from './context'
+import { getLocale } from './context'
 import { CcCoconut } from '@/components/icons/CcCoconut'
 import { ServerLink } from '@/components/atom/ServerLink'
 import { CcTranslateClient } from '@/components/atom/CcTranslate.client'
 import { CcTheme } from '@/components/atom/CcTheme.client'
+import { t } from '@/app/locale.server'
 
 export async function CcHeader() {
   const locale = getLocale()
