@@ -1,2 +1,1 @@
-const obj = {}
-export default obj
+export * from './path'

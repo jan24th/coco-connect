@@ -1,7 +1,7 @@
 import { Switch } from '@headlessui/react'
 import type { SVGProps } from 'react'
 import clsx from 'clsx'
-import { useLocale } from '../Locale/Locale'
+import { useLabel } from '../Locale/Locale'
 
 const positionClass = 'absolute inset-0 flex justify-center items-center duration-500 transition-all ease-toggle'
 const active = 'translate-x-0 translate-y-0 scale-100 opacity-100'
@@ -21,7 +21,7 @@ export function ThemeSwitch({
 }) {
   const isLight = theme === 'light'
   const status = enabled ? theme : 'unable'
-  const $t = useLocale()
+  const $t = useLabel()
   return (
     <Switch
       checked={enabled ? isLight : false}

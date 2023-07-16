@@ -77,9 +77,12 @@ export default async function Post() {
 
     <div>
       {data.attributes.sections.map((i, index) => {
-        if (i.__typename === 'ComponentSectionRichtext')
-          return <RenderContent content={i.content} key={index}/>
-        else return <div key={index}></div>
+        switch (i.__typename) {
+          case 'ComponentSectionRichtext':
+            return <RenderContent content={i.content} key={index}/>
+          default:
+            return <div key={index} className='hidden'>{i.__typename}</div>
+        }
       })}
     </div>
   </div>

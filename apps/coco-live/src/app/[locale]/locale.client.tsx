@@ -1,9 +1,9 @@
 'use client'
-import { LocaleProvider, useLocale } from 'ui'
+import { LocaleProvider, useLabel as useLabelBase } from 'ui'
 import type { ComponentProps } from 'react'
 
 export function useLabel() {
-  return useLocale<keyof Messages>()
+  return useLabelBase<keyof Messages>()
 }
 
 export function CcLocaleProvider(props: ComponentProps<typeof LocaleProvider>) {

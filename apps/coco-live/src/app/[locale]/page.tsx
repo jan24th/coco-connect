@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import React from 'react'
 import { Page } from '@/components/atom/Layout'
-import { ServerLink } from '@/components/atom/ServerLink'
 import type { LocaleParamsProps } from '@/i18n/i18n-config'
 import { initLocale, t } from '@/app/locale.server'
+import { Link } from '@/components/atom/Link.client'
 
 export const metadata: Metadata = {
   title: 'COCO LIVE',
@@ -23,7 +23,7 @@ export default async function Index({ params: { locale } }: LocaleParamsProps) {
           </h1>
           <ul className="mt-4 flex items-center justify-center">
             <li>
-              <ServerLink href='/post' >{t('Blog')}</ServerLink>
+              <Link href='/post' >{t('Blog')}</Link>
             </li>
           </ul>
         </div>

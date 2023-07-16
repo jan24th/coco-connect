@@ -6,16 +6,14 @@ export interface LocaleLabels {
   [key: string]: string
 }
 interface LocaleState {
-  locale: string
   labels: LocaleLabels
 }
 
-const context = createContext<LocaleState>({ locale: 'en', labels: {} })
-export function LocaleProvider({ locale, labels, children }: PropsWithChildren<LocaleState>) {
-  return <context.Provider value={{ locale, labels }}>{children}</context.Provider>
+const context = createContext<LocaleState>({ labels: {} })
+export function LocaleProvider({ labels, children }: PropsWithChildren<LocaleState>) {
+  return <context.Provider value={{ labels }}>{children}</context.Provider>
 }
-
-export function useLocale<K extends keyof LocaleLabels>() {
+export function useLabel<K extends keyof LocaleLabels>() {
   const { labels } = useContext(context)
   return (key: K, params: Record<string, string | number> = {}) => replaceWithObj(labels[key], params)
 }

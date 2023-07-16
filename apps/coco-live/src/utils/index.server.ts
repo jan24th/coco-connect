@@ -1,2 +1,3 @@
-export * from './path.server'
+import 'server-only'
+
 export * from './context.server'

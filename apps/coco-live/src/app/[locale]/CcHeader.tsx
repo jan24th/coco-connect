@@ -1,9 +1,9 @@
 import { getLocale } from './context'
 import { CcCoconut } from '@/components/icons/CcCoconut'
-import { ServerLink } from '@/components/atom/ServerLink'
 import { CcTranslateClient } from '@/components/atom/CcTranslate.client'
 import { CcTheme } from '@/components/atom/CcTheme.client'
 import { t } from '@/app/locale.server'
+import { Link } from '@/components/atom/Link.client'
 
 export async function CcHeader() {
   const locale = getLocale()
@@ -15,12 +15,12 @@ export async function CcHeader() {
           <span className="block bg-gradient-to-r from-brandred to-brandblue bg-clip-text text-2xl font-black text-transparent">
             {t('COCO LIVE')}
           </span>
-          <ServerLink className="font-semibold" href={'/post'}>
+          <Link className="font-semibold" href={'/post'}>
             {t('Blog')}
-          </ServerLink>
-          <ServerLink className="font-semibold" href={'/'}>
+          </Link>
+          <Link className="font-semibold" href={'/'}>
             {t('Timeline')}
-          </ServerLink>
+          </Link>
         </div>
         <div className="flex items-center space-x-2">
           <CcTranslateClient locale={locale} messages={{ cn: t('Chinese'), en: t('English') }}/>

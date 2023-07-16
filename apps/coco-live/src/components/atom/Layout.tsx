@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react'
-import Bread from './Bread'
+import Breadcrumb from './Breadcrumb.client'
 
 export function Layout({ children, layout = false }: PropsWithChildren<{ layout?: boolean }>) {
   if (!layout)
@@ -15,7 +15,7 @@ export function Layout({ children, layout = false }: PropsWithChildren<{ layout?
 }
 
 export function Page({ children, layout = false }: PropsWithChildren<{ layout?: boolean }>) {
-  const content = <><Bread />{children}</>
+  const content = <><Breadcrumb />{children}</>
   if (!layout)
     return content
   return <div className="p-4">

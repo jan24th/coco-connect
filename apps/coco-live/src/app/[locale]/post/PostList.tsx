@@ -2,9 +2,9 @@ import type { PostFragment } from 'strapi'
 import Image from 'next/image'
 import { getLocale } from '../context'
 import { getPosts } from './getPosts.server'
-import { ServerLink } from '@/components/atom/ServerLink'
 import { Time } from '@/components/atom/Time'
 import { t } from '@/app/locale.server'
+import { Link } from '@/components/atom/Link.client'
 
 export function PostListSkeletons() {
   return <ul>
@@ -34,22 +34,22 @@ export function PostItem({ post }: { post: PostFragment }) {
         <Time locale={locale} time={post.publishedAt} />
         {
           post.post_tags.data.map(i =>
-            <ServerLink
+            <Link
               href={href}
               key={i.id}
               className="relative z-10 rounded bg-zinc-200 px-3 py-1 font-medium text-zinc-500 hover:bg-zinc-100 dark:bg-zinc-800 dark:text-zinc-400"
             >
               {i.attributes.name}
-            </ServerLink>)
+            </Link>)
         }
 
       </div>
       <div className="group relative max-w-xl">
         <h3 className="mt-3 text-lg font-semibold leading-6 text-zinc-900 group-hover:text-zinc-600 dark:text-zinc-400 dark:group-hover:text-zinc-200 ">
-          <ServerLink href={href}>
+          <Link href={href}>
             <span className="absolute inset-0" />
             {post.title}
-          </ServerLink>
+          </Link>
         </h3>
         <p className="mt-5 text-sm leading-6 text-zinc-600">{post.description}</p>
       </div>

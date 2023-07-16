@@ -12,7 +12,7 @@ const mock = {
   'Toggle theme to': 'Toggle theme to {{mode}}',
   'Toggle theme': 'Toggle theme',
 }
-const Wrapper = ({ children }: PropsWithChildren) => <LocaleProvider locale='en' labels={mock}>{children}</LocaleProvider>
+const Wrapper = ({ children }: PropsWithChildren) => <LocaleProvider labels={mock}>{children}</LocaleProvider>
 describe('ThemeSwitch', () => {
   it('can switch theme', () => {
     const Container = () => {
