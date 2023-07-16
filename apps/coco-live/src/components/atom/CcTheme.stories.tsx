@@ -7,7 +7,7 @@ import { CcLocaleProvider } from '@/app/locale.client'
 const meta: Meta<typeof CcTheme> = {
   title: 'atom/CcTheme',
   component: () => (
-    <CcLocaleProvider locale='en' labels={labels}>
+    <CcLocaleProvider labels={labels}>
       <CcThemeProviders>
         <CcTheme />
         <div>
