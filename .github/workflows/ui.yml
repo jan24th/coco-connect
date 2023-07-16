@@ -70,11 +70,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store
 
-      - name: Build deps
-        run: pnpm build --filter=./packages/*
-
       - name: Install
         run: pnpm i
+
+      - name: Build deps
+        run: pnpm build --filter=./packages/*
 
       - name: Run typecheck
         run: pnpm typecheck --filter=./packages/ui
