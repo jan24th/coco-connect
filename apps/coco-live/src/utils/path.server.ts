@@ -8,7 +8,7 @@ export function getPathName() {
   const headersList = headers()
   const locales = getLocales()
   const pathname = headersList.get('x-invoke-path') || ''
-  const paths = (pathname).split('/').filter(typedBoolean)
+  const paths = pathname.split('/').filter(typedBoolean)
   if (locales.includes(paths.at(0) as Locale))
     return `/${paths.slice(1).join('/')}`
   return pathname
